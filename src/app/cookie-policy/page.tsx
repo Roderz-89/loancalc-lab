@@ -18,14 +18,13 @@ export default function Page() {
         { label: 'Cookie policy' },
       ]}
       published="2026-09-14"
-      updated="2026-09-14"
+      updated="2026-09-15"
     >
 
       <p>
-        Phase 1 of LoanCalc Lab does not require cookies for calculators to work. If we enable
-        analytics or Google AdSense later, those services may set cookies or similar technologies.
-        AdSense is currently <strong>disabled</strong> (<code>adsenseEnabled: false</code>); preview
-        slots are labelled mocks only.
+        LoanCalc Lab does not require cookies for calculators to work. If we enable analytics or
+        Google AdSense later, those services may set cookies or similar technologies. AdSense is
+        currently <strong>disabled</strong> (<code>adsenseEnabled: false</code>).
       </p>
       <p>
         When live advertising is turned on, we will update this policy and add an appropriate

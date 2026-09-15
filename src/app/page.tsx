@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CALCULATORS } from "@/content/calculators";
 import { GUIDES } from "@/content/guides";
-import { SITE, TRUST_STRIP } from "@/content/site";
-import { AdSlot } from "@/components/calculator/AdSlot";
+import { SITE, TRUST_STRIP, formatContentDate } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "LoanCalc Lab — Personal loan, EMI & debt payoff calculators",
@@ -21,23 +20,25 @@ const featured = CALCULATORS.filter((c) =>
 );
 
 export default function HomePage() {
+  const updated = formatContentDate(SITE.contentAsOf);
+
   return (
     <div>
-      <section className="border-b border-slate-200 bg-gradient-to-b from-slate-50 to-white">
+      <section className="border-b border-stone-200 bg-gradient-to-b from-amber-50/70 via-stone-50 to-[var(--background)]">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
           <p
             className="text-sm font-semibold uppercase tracking-wide"
             style={{ color: SITE.accent }}
           >
-            Multi-country loan decision lab
+            Personal loan &amp; debt payoff tools
           </p>
           <h1 className="mt-3 max-w-3xl text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
-            Personal loan EMI, amortisation & debt payoff — clear maths, clear assumptions
+            What will you pay each month — and how can you clear debt faster?
           </h1>
           <p className="mt-5 max-w-2xl text-lg text-slate-600">
-            Calculator-first tools for borrowers comparing EMI and instalments, consolidation
-            break-even, snowball vs avalanche, and the true cost of fees — across US, India-SEA,
-            AU, CA and UK modes.
+            Work out your EMI or instalment, see whether consolidating saves money, and compare
+            snowball vs avalanche payoff — with fees and assumptions shown. Built for borrowers in
+            the UK, US, India and more.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
@@ -48,45 +49,46 @@ export default function HomePage() {
               EMI / payment calculator
             </Link>
             <Link
-              href="/calculators/snowball-vs-avalanche"
-              className="rounded-lg border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-800 hover:bg-slate-50"
+              href="/calculators/consolidation-break-even"
+              className="rounded-lg border border-stone-300 bg-white px-5 py-3 text-sm font-semibold text-slate-800 hover:bg-stone-50"
             >
-              Snowball vs avalanche
+              Consolidation break-even
             </Link>
             <Link
-              href="/guides/how-emi-works"
-              className="rounded-lg border border-transparent px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-100"
+              href="/calculators/snowball-vs-avalanche"
+              className="rounded-lg border border-transparent px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-stone-100"
             >
-              How EMI works →
+              Snowball vs avalanche →
             </Link>
           </div>
-          <p className="mt-6 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-slate-500">
-            {TRUST_STRIP.signals.map((signal, i) => (
-              <span key={signal} className="inline-flex items-center gap-x-2">
-                {i > 0 && (
-                  <span className="text-slate-300" aria-hidden>
-                    ·
-                  </span>
-                )}
-                <span>{signal}</span>
-              </span>
-            ))}
-            <span className="text-slate-300" aria-hidden>
-              ·
-            </span>
-            <Link
-              href={TRUST_STRIP.disclaimerHref}
-              className="font-medium text-slate-600 underline decoration-slate-300 underline-offset-2 hover:text-slate-900"
-            >
-              {TRUST_STRIP.disclaimerLabel}
-            </Link>
-          </p>
+
+          <div className="mt-8 max-w-2xl rounded-xl border border-stone-200 bg-white/90 p-4 shadow-sm">
+            <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-semibold text-slate-800">
+              {TRUST_STRIP.heroSignals.map((signal, i) => (
+                <span key={signal} className="inline-flex items-center gap-x-2">
+                  {i > 0 && (
+                    <span className="font-normal text-slate-300" aria-hidden>
+                      ·
+                    </span>
+                  )}
+                  <span>{signal}</span>
+                </span>
+              ))}
+            </p>
+            <p className="mt-2 text-sm text-slate-600">{TRUST_STRIP.jurisdictionNote}</p>
+            <p className="mt-2 text-xs text-slate-500">
+              <Link
+                href={TRUST_STRIP.disclaimerHref}
+                className="font-medium text-slate-600 underline decoration-slate-300 underline-offset-2 hover:text-slate-900"
+              >
+                {TRUST_STRIP.disclaimerLabel}
+              </Link>
+              {" · "}
+              Updated <time dateTime={SITE.contentAsOf}>{updated}</time>
+            </p>
+          </div>
         </div>
       </section>
-
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <AdSlot slot="home-below-hero" format="leaderboard" />
-      </div>
 
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
         <div className="flex items-end justify-between gap-4">
@@ -104,7 +106,7 @@ export default function HomePage() {
             <Link
               key={c.slug}
               href={c.href}
-              className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-slate-300 hover:shadow"
+              className="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm transition hover:border-stone-300 hover:shadow"
             >
               <p className="text-xs font-medium uppercase tracking-wide text-slate-500">
                 {c.decisionStage}
@@ -116,9 +118,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="border-y border-slate-200 bg-slate-50">
+      <section className="border-y border-stone-200 bg-stone-50/80">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-          <h2 className="text-2xl font-bold text-slate-900">Borrower decision path</h2>
+          <h2 className="text-2xl font-bold text-slate-900">A simple path for borrowers</h2>
           <ol className="mt-6 grid gap-4 sm:grid-cols-3">
             {[
               {
@@ -140,7 +142,7 @@ export default function HomePage() {
                 href: "/calculators/apr-true-cost",
               },
             ].map((item) => (
-              <li key={item.step} className="rounded-2xl border border-slate-200 bg-white p-5">
+              <li key={item.step} className="rounded-2xl border border-stone-200 bg-white p-5">
                 <span
                   className="inline-flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold text-white"
                   style={{ backgroundColor: SITE.accent }}
@@ -163,13 +165,18 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-        <h2 className="text-2xl font-bold text-slate-900">Guides worth reading first</h2>
+        <div className="flex items-end justify-between gap-4">
+          <h2 className="text-2xl font-bold text-slate-900">Guides worth reading first</h2>
+          <p className="text-xs text-slate-500">
+            Updated <time dateTime={SITE.contentAsOf}>{updated}</time>
+          </p>
+        </div>
         <ul className="mt-6 grid gap-3 sm:grid-cols-2">
           {GUIDES.filter((g) => g.priority === "P0").map((g) => (
             <li key={g.slug}>
               <Link
                 href={g.href}
-                className="block rounded-xl border border-slate-200 p-4 hover:bg-slate-50"
+                className="block rounded-xl border border-stone-200 p-4 hover:bg-stone-50"
               >
                 <h3 className="font-semibold text-slate-900">{g.title}</h3>
                 <p className="mt-1 text-sm text-slate-600">{g.description}</p>

@@ -4,7 +4,7 @@ import { FOOTER_LEGAL, SITE } from "@/content/site";
 export function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="mt-auto border-t border-slate-200 bg-slate-50 print:hidden">
+    <footer className="mt-auto border-t border-stone-200 bg-stone-50 print:hidden">
       <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <div>
@@ -52,7 +52,7 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        <p className="mt-8 border-t border-slate-200 pt-6 text-xs text-slate-500">
+        <p className="mt-8 border-t border-stone-200 pt-6 text-xs text-slate-500">
           © {year} {SITE.name}. Independent informational site — not a lender or credit broker.
         </p>
       </div>

@@ -18,7 +18,7 @@ export default function Page() {
         { label: 'Privacy policy' },
       ]}
       published="2026-09-14"
-      updated="2026-09-14"
+      updated="2026-09-15"
     >
 
       <p>
@@ -28,12 +28,12 @@ export default function Page() {
       <h2 className="text-xl font-semibold text-slate-900 pt-2">Data we process</h2>
       <ul className="list-disc space-y-2 pl-5">
         <li>
-          <strong>Calculator inputs:</strong> processed in your browser for Phase 1 tools; we do
-          not require an account and do not intentionally store your loan figures on our servers.
+          <strong>Calculator inputs:</strong> processed in your browser; we do not require an
+          account and do not intentionally store your loan figures on our servers.
         </li>
         <li>
-          <strong>Contact emails:</strong> if you email us, we process your address and message to
-          respond.
+          <strong>Contact emails:</strong> if you email us (including checklist requests via
+          mailto), we process your address and message to respond.
         </li>
         <li>
           <strong>Technical logs:</strong> standard hosting/CDN logs (IP, user agent) for security
@@ -43,7 +43,7 @@ export default function Page() {
           <strong>Cookies / ads:</strong> when AdSense or analytics are enabled, those providers
           may set cookies — see our{" "}
           <a href="/cookie-policy" className="underline">cookie policy</a>. AdSense is
-          feature-flagged off by default in this Phase 1 build.
+          currently off (<code>adsenseEnabled: false</code>).
         </li>
       </ul>
       <h2 className="text-xl font-semibold text-slate-900 pt-2">Your rights</h2>

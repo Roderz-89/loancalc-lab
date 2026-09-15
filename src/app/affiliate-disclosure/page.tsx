@@ -18,11 +18,11 @@ export default function Page() {
         { label: 'Affiliate disclosure' },
       ]}
       published="2026-09-14"
-      updated="2026-09-14"
+      updated="2026-09-15"
     >
 
       <p>
-        Phase 1 has <strong>no live affiliate CTAs</strong>. If we later earn commissions from
+        There are currently <strong>no live affiliate CTAs</strong>. If we later earn commissions from
         lender or broker partners, we will label those links clearly. Affiliate relationships will
         not change calculator formulas or disclosed assumptions.
       </p>

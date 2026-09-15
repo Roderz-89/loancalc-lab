@@ -61,7 +61,7 @@ export function PersonalLoanEmiCalculator() {
         },
         {
           q: "Do you support flat-rate loans?",
-          a: "No — Phase 1 models reducing-balance only. Flat-rate quotes often look cheaper but cost more; convert or ask the lender for the reducing-balance / APR equivalent.",
+          a: "No — this calculator models reducing-balance only. Flat-rate quotes often look cheaper but cost more; convert or ask the lender for the reducing-balance / APR equivalent.",
         },
       ]}
       equations={

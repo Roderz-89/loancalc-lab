@@ -1,10 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  /* Warmer page ground than Remortgage Lab’s pure white */
+  --background: #faf7f2;
   --foreground: #0f172a;
   --accent: #c8102e;
   --accent-soft: #fde8ec;
+  --accent-secondary: #b45309;
+  --header-bg: #fffdf9;
 }
 
 @theme inline {

@@ -18,14 +18,15 @@ export default function Page() {
         { label: 'About LoanCalc Lab' },
       ]}
       published="2026-09-14"
-      updated="2026-09-14"
+      updated="2026-09-15"
     >
 
       <p>
         <strong>LoanCalc Lab</strong> is an independent informational site run by{" "}
-        <strong>Chris Rodway</strong>. It helps borrowers think clearly about personal loans and
-        debt payoff: EMI and instalments, amortisation, consolidation break-even, snowball vs
-        avalanche, refinance timing, and the true cost of fees — with assumptions stated up front.
+        <strong>Chris Rodway</strong>. It helps borrowers answer practical questions: what will I
+        pay each month, does consolidating save money, and how do I clear debt faster — with EMI,
+        amortisation, snowball vs avalanche, and fee true-cost tools. Assumptions are stated up
+        front.
       </p>
       <h2 className="text-xl font-semibold text-slate-900 pt-2">What we are not</h2>
       <ul className="list-disc space-y-2 pl-5">
@@ -33,10 +34,10 @@ export default function Page() {
         <li>Not a credit offer or personalised financial advice</li>
         <li>Not a substitute for the lender’s disclosure in your country</li>
       </ul>
-      <h2 className="text-xl font-semibold text-slate-900 pt-2">Sibling site</h2>
+      <h2 className="text-xl font-semibold text-slate-900 pt-2">Focus</h2>
       <p>
-        LoanCalc Lab is a calculator-first decision lab focused on personal loans and debt payoff.
-        It focuses solely on personal loans, EMI and debt payoff — a separate niche from property financing tools.
+        LoanCalc Lab focuses on personal loans, EMI and debt payoff across UK, US, India–SEA, AU
+        and CA calculator modes. It is a separate niche from property remortgage tools.
       </p>
   
     </ArticleLayout>

@@ -1,17 +1,22 @@
 export const SITE = {
   name: "LoanCalc Lab",
   domain: "loancalclab.com",
-  tagline: "Personal loan, EMI & debt payoff calculators — multi-country",
+  tagline: "See your payment, compare consolidation, pay debt faster",
   description:
-    "Calculator-first decision lab for borrowers comparing EMI, amortisation, debt snowball/avalanche, and consolidation break-even — with clear assumptions across US, India-SEA, AU, CA and UK.",
+    "Free personal loan and debt calculators — EMI and monthly payments, consolidation break-even, snowball vs avalanche, fees and true cost — for UK, US, India and more. Clear maths, stated assumptions.",
   locale: "en-GB",
   accent: "#c8102e",
+  /** Secondary accent for light visual differentiation from Remortgage Lab */
+  accentSecondary: "#b45309",
   url: "https://loancalclab.com",
   author: "Chris Rodway",
-  /** Show labelled mock AdSense placements for local UX review (not live ads) */
-  adsensePreview: true,
+  /** Shared editorial “last checked” date */
+  contentAsOf: "2026-09-15",
+  /** Show labelled mock AdSense placements (off — site should not feel unfinished) */
+  adsensePreview: false,
   /** Wire real AdSense only after go-live, approval, and consent */
   adsenseEnabled: false,
+  contactEmail: "hello@loancalclab.com",
 } as const;
 
 export const NAV = [
@@ -39,6 +44,18 @@ export const DEFAULT_DISCLAIMER =
 /** Calm clarity signals for header / hero trust strip (en-GB, not salesy) */
 export const TRUST_STRIP = {
   signals: ["Free", "No signup", "Not a lender", "Maths disclosed"] as const,
+  heroSignals: ["Not a lender", "Not credit advice", "Illustrative only"] as const,
+  jurisdictionNote:
+    "Calculators support UK / US / India–SEA / AU / CA modes — always check local lender terms.",
   disclaimerHref: "/calculator-disclaimer",
   disclaimerLabel: "Calculator disclaimer",
 } as const;
+
+/** Format an ISO date (YYYY-MM-DD) for en-GB display */
+export function formatContentDate(iso: string): string {
+  return new Date(iso).toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+}

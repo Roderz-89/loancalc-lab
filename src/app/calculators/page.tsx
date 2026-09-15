@@ -15,7 +15,7 @@ export default function Page() {
   return (
     <ArticleLayout
       title="Calculators"
-      description="Working reducing-balance tools for personal loans and debt payoff — not stubs."
+      description="EMI, amortisation, consolidation, snowball vs avalanche, refinance and APR true-cost — reducing-balance maths with disclosed assumptions."
       crumbs={[
         { label: "Home", href: "/" },
         { label: "Calculators" },

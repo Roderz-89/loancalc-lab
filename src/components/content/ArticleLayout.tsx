@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
 import { Breadcrumbs, type Crumb } from "@/components/layout/Breadcrumbs";
-import { AdSlot } from "@/components/calculator/AdSlot";
 import { RelatedLinks } from "@/components/content/RelatedLinks";
 
 export function ArticleLayout({
@@ -53,10 +52,8 @@ export function ArticleLayout({
           )}
         </p>
       )}
-      <AdSlot slot="after-intro" format="leaderboard" />
       <div className="prose-custom mt-8 space-y-4 text-slate-700 leading-relaxed">{children}</div>
       {related && <RelatedLinks links={related} />}
-      <AdSlot slot="end-of-article" format="rectangle" className="mt-8" />
       <p className="mt-8 text-sm text-slate-500">
         Calculators and articles on LoanCalc Lab are illustrative and not personalised
         financial advice or a credit offer. Always check the lender’s disclosure for your
