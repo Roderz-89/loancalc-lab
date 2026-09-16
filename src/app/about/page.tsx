@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ArticleLayout } from "@/components/content/ArticleLayout";
 import { SITE } from "@/content/site";
 
@@ -18,12 +19,16 @@ export default function Page() {
         { label: 'About LoanCalc Lab' },
       ]}
       published="2026-09-14"
-      updated="2026-09-15"
+      updated="2026-09-16"
     >
 
       <p>
-        <strong>LoanCalc Lab</strong> is an independent informational site run by{" "}
-        <strong>Chris Rodway</strong>. It helps borrowers answer practical questions: what will I
+        <strong>LoanCalc Lab</strong> is an independent informational site from{" "}
+        <Link href="/brand" className="underline">
+          {SITE.brand.name}
+        </Link>
+        {" "}
+        ({SITE.brand.tagline}). It helps borrowers answer practical questions: what will I
         pay each month, does consolidating save money, and how do I clear debt faster — with EMI,
         amortisation, snowball vs avalanche, and fee true-cost tools. Assumptions are stated up
         front.
@@ -37,7 +42,15 @@ export default function Page() {
       <h2 className="text-xl font-semibold text-slate-900 pt-2">Focus</h2>
       <p>
         LoanCalc Lab focuses on personal loans, EMI and debt payoff across UK, US, India–SEA, AU
-        and CA calculator modes. It is a separate niche from property remortgage tools.
+        and CA calculator modes. Content is maintained by {SITE.editorial}. It is a separate niche
+        from property remortgage tools.
+      </p>
+      <p>
+        Questions or corrections: see{" "}
+        <Link href="/contact" className="underline">
+          Contact
+        </Link>
+        .
       </p>
   
     </ArticleLayout>

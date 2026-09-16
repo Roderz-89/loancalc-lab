@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/guides",
     "/glossary",
     "/about",
+    "/brand",
     "/editorial-policy",
     "/contact",
     "/privacy",

@@ -16,7 +16,6 @@ export function CalculatorShell({
   onReset,
   related,
   faqs,
-  leadCapture,
 }: {
   title: string;
   intro: string;
@@ -29,7 +28,6 @@ export function CalculatorShell({
   onReset: () => void;
   related?: { href: string; label: string }[];
   faqs?: { q: string; a: string }[];
-  leadCapture?: ReactNode;
 }) {
   const nextTools = related?.filter((l) => l.href.startsWith("/calculators/")) ?? [];
   const lastChecked = formatContentDate(SITE.contentAsOf);
@@ -39,7 +37,7 @@ export function CalculatorShell({
       <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">{title}</h1>
       <p className="mt-3 text-lg text-slate-600">{intro}</p>
       <p className="mt-3 rounded-lg border border-stone-200 bg-stone-50/80 px-3 py-2 text-xs leading-relaxed text-slate-600">
-        <span className="font-medium text-slate-800">Author:</span> {SITE.author}
+        <span className="font-medium text-slate-800">{SITE.editorial}</span>
         {" · "}
         <span className="font-medium text-slate-800">Methodology:</span> reducing-balance EMI /
         amortisation with disclosed assumptions (fees optional where shown)
@@ -141,8 +139,6 @@ export function CalculatorShell({
           </div>
         </section>
       )}
-
-      {leadCapture}
 
       <div className="mt-6 print:hidden">
         <button

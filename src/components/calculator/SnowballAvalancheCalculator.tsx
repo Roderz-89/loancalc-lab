@@ -8,7 +8,6 @@ import {
   ResultRow,
   SelectInput,
 } from "./CalculatorShell";
-import { LeadCapture } from "@/components/content/LeadCapture";
 import { compareSnowballAvalanche } from "@/lib/calculators/snowball-avalanche";
 import {
   formatMoney,
@@ -82,7 +81,6 @@ export function SnowballAvalancheCalculator() {
         { href: "/calculators/consolidation-break-even", label: "Consolidation break-even" },
         { href: "/calculators/extra-payment", label: "Extra payment" },
       ]}
-      leadCapture={<LeadCapture context="debt payoff" />}
       faqs={[
         {
           q: "Which should I choose?",

@@ -18,7 +18,7 @@ export default function Page() {
         { label: 'Privacy policy' },
       ]}
       published="2026-09-14"
-      updated="2026-09-15"
+      updated="2026-09-16"
     >
 
       <p>
@@ -32,8 +32,9 @@ export default function Page() {
           account and do not intentionally store your loan figures on our servers.
         </li>
         <li>
-          <strong>Contact emails:</strong> if you email us (including checklist requests via
-          mailto), we process your address and message to respond.
+          <strong>Contact emails:</strong> if you email us via the contact address, we process
+          your address and message to respond. We do not run a newsletter or mailing list signup
+          on this site.
         </li>
         <li>
           <strong>Technical logs:</strong> standard hosting/CDN logs (IP, user agent) for security

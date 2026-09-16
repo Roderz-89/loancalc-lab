@@ -9,7 +9,8 @@ export const SITE = {
   /** Secondary accent for light visual differentiation from Remortgage Lab */
   accentSecondary: "#b45309",
   url: "https://loancalclab.com",
-  author: "Chris Rodway",
+  /** Anonymous editorial byline — no personal name on site-facing content */
+  editorial: "LoanCalc Lab editorial",
   /** Shared editorial “last checked” date */
   contentAsOf: "2026-09-15",
   /** Show labelled mock AdSense placements (off — site should not feel unfinished) */
@@ -17,6 +18,12 @@ export const SITE = {
   /** Wire real AdSense only after go-live, approval, and consent */
   adsenseEnabled: false,
   contactEmail: "hello@loancalclab.com",
+  /** Brand umbrella (finance tools; Eng Hub stays separate) */
+  brand: {
+    name: "Rodway Labs",
+    tagline: "tools to help you calculate life",
+    logoSrc: "/brand/rodway-labs-logo.png",
+  },
 } as const;
 
 export const NAV = [

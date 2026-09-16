@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { FOOTER_LEGAL, SITE } from "@/content/site";
 
@@ -13,6 +14,24 @@ export function Footer() {
             <p className="mt-3 text-xs text-slate-500">
               Calculators are illustrative and not personalised financial advice.
             </p>
+            <Link
+              href="/brand"
+              className="mt-4 inline-flex items-center gap-2.5 rounded-lg border border-stone-200 bg-white/80 px-2.5 py-2 text-left transition hover:border-stone-300 hover:bg-white"
+            >
+              <Image
+                src={SITE.brand.logoSrc}
+                alt=""
+                width={28}
+                height={28}
+                className="h-7 w-7 rounded-sm object-contain"
+              />
+              <span className="text-xs leading-snug text-slate-600">
+                <span className="font-medium text-slate-800">{SITE.brand.name}</span>
+                <span className="block text-slate-500">
+                  Part of {SITE.brand.name} — {SITE.brand.tagline}
+                </span>
+              </span>
+            </Link>
           </div>
           <div>
             <p className="text-sm font-semibold text-slate-900">Explore</p>
@@ -37,6 +56,11 @@ export function Footer() {
                   About
                 </Link>
               </li>
+              <li>
+                <Link className="text-slate-600 hover:text-slate-900" href="/brand">
+                  Brand
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
@@ -54,6 +78,8 @@ export function Footer() {
         </div>
         <p className="mt-8 border-t border-stone-200 pt-6 text-xs text-slate-500">
           © {year} {SITE.name}. Independent informational site — not a lender or credit broker.
+          {" · "}
+          Part of {SITE.brand.name} — {SITE.brand.tagline}.
         </p>
       </div>
     </footer>

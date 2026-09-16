@@ -8,7 +8,6 @@ import {
   ResultRow,
   SelectInput,
 } from "./CalculatorShell";
-import { LeadCapture } from "@/components/content/LeadCapture";
 import { calculateConsolidation } from "@/lib/calculators/consolidation";
 import {
   formatMoney,
@@ -72,7 +71,6 @@ export function ConsolidationCalculator() {
         { href: "/calculators/apr-true-cost", label: "APR true cost" },
         { href: "/glossary/consolidation", label: "Consolidation glossary" },
       ]}
-      leadCapture={<LeadCapture context="debt consolidation" />}
       faqs={[
         {
           q: "Should the consolidation amount equal the sum of balances?",

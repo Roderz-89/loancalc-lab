@@ -60,6 +60,11 @@ export default function RootLayout({
       "@type": "Organization",
       name: SITE.name,
       url: SITE.url,
+      parentOrganization: {
+        "@type": "Organization",
+        name: SITE.brand.name,
+        description: SITE.brand.tagline,
+      },
     },
   };
 
