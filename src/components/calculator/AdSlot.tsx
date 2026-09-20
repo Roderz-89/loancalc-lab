@@ -47,6 +47,26 @@ function resolveAdSlotId(slot: string, adSlotId?: string): string | undefined {
   return undefined;
 }
 
+/** AdSense <ins> attrs by placement — match Google unit type snippets. */
+function adInsProps(slot: string): Record<string, string> {
+  if (slot === "end-of-article") {
+    // Multiplex responsive
+    return { "data-ad-format": "autorelaxed" };
+  }
+  if (slot === "calc-below-results") {
+    // In-article
+    return {
+      "data-ad-format": "fluid",
+      "data-ad-layout": "in-article",
+    };
+  }
+  // Display responsive (default / home-below-tools)
+  return {
+    "data-ad-format": "auto",
+    "data-full-width-responsive": "true",
+  };
+}
+
 /**
  * AdSense slot.
  * - adsensePreview: labelled mock units (local UX only)
@@ -76,7 +96,7 @@ export function AdSlot({
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch {
-      /* AdSense may throw if script not ready; Auto ads still work via loader */
+      /* AdSense may throw if script not ready */
     }
   }, []);
 
@@ -87,6 +107,11 @@ export function AdSlot({
   const isLive = SITE.adsenseEnabled && !SITE.adsensePreview;
 
   if (isLive) {
+    const insStyle =
+      slot === "calc-below-results"
+        ? { display: "block" as const, textAlign: "center" as const, minHeight: 90, width: "100%" }
+        : { display: "block" as const, minHeight: 90, width: "100%" };
+
     return (
       <aside
         className={`my-6 flex justify-center overflow-hidden print:hidden ${className}`}
@@ -96,11 +121,10 @@ export function AdSlot({
       >
         <ins
           className="adsbygoogle"
-          style={{ display: "block", minHeight: 90, width: "100%" }}
+          style={insStyle}
           data-ad-client={SITE.adsenseClient}
           {...(resolvedSlotId ? { "data-ad-slot": resolvedSlotId } : {})}
-          data-ad-format="auto"
-          data-full-width-responsive="true"
+          {...adInsProps(slot)}
         />
       </aside>
     );

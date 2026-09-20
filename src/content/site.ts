@@ -22,9 +22,9 @@ export const SITE = {
   adsenseClient: "ca-pub-7612291779397704",
   /** AdSense unit IDs keyed by placement slot name */
   adsenseSlots: {
-    "home-below-tools": "4458071941",
-    "calc-below-results": "9371397987",
-    "end-of-article": "8309597759",
+    "home-below-tools": "6832953843", // loancalc-display-footer (Display responsive)
+    "calc-below-results": "9343477829", // loancalc-inarticle (In-article)
+    "end-of-article": "2103371347", // loancalc-multiplex (Multiplex responsive)
   },
   contactEmail: "hello@loancalclab.net",
   /** Brand umbrella (finance tools; Eng Hub stays separate) */
