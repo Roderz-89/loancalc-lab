@@ -23,8 +23,8 @@ export default function Page() {
 
       <p>
         For editorial corrections, privacy requests or general questions about LoanCalc Lab, email{" "}
-        <a href="mailto:hello@loancalclab.com" className="underline">
-          hello@loancalclab.com
+        <a href={`mailto:${SITE.contactEmail}`} className="underline">
+          {SITE.contactEmail}
         </a>
         . We cannot provide personalised lending advice or process loan applications.
       </p>

@@ -1,6 +1,6 @@
 export const SITE = {
   name: "LoanCalc Lab",
-  domain: "loancalclab.com",
+  domain: "loancalclab.net",
   tagline: "See your payment, compare consolidation, pay debt faster",
   description:
     "Free personal loan and debt calculators — EMI and monthly payments, consolidation break-even, snowball vs avalanche, fees and true cost — for UK, US, India and more. Clear maths, stated assumptions.",
@@ -8,7 +8,8 @@ export const SITE = {
   accent: "#c8102e",
   /** Secondary accent for light visual differentiation from Remortgage Lab */
   accentSecondary: "#b45309",
-  url: "https://loancalclab.com",
+  /** Production canonical URL (Cloudflare Pages + custom domain) */
+  url: "https://loancalclab.net",
   /** Anonymous editorial byline — no personal name on site-facing content */
   editorial: "LoanCalc Lab editorial",
   /** Shared editorial “last checked” date */
@@ -17,7 +18,7 @@ export const SITE = {
   adsensePreview: false,
   /** Wire real AdSense only after go-live, approval, and consent */
   adsenseEnabled: false,
-  contactEmail: "hello@loancalclab.com",
+  contactEmail: "hello@loancalclab.net",
   /** Brand umbrella (finance tools; Eng Hub stays separate) */
   brand: {
     name: "Rodway Labs",

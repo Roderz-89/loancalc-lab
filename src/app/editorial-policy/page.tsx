@@ -24,7 +24,7 @@ export default function Page() {
       <p>
         We prioritise clear assumptions, working maths and fewer high-quality pages over thin
         content. Calculator formulas are documented on each tool. Guides show published and updated
-        dates. Corrections: email hello@loancalclab.com.
+        dates. Corrections: email{" "}{SITE.contactEmail}.
       </p>
       <p>
         We do not accept payment to alter calculator outputs. Advertising and affiliates, if any,

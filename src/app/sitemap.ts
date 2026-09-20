@@ -4,6 +4,9 @@ import { CALCULATORS } from "@/content/calculators";
 import { GUIDES } from "@/content/guides";
 import { GLOSSARY } from "@/content/glossary";
 
+/** Required for `output: "export"` */
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     "/",

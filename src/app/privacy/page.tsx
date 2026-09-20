@@ -23,7 +23,7 @@ export default function Page() {
 
       <p>
         LoanCalc Lab (“we”) respects your privacy. This notice explains what we process when you
-        use loancalclab.com.
+        use this site ({SITE.domain}).
       </p>
       <h2 className="text-xl font-semibold text-slate-900 pt-2">Data we process</h2>
       <ul className="list-disc space-y-2 pl-5">
@@ -51,7 +51,7 @@ export default function Page() {
       <p>
         Depending on your location you may have rights of access, rectification, erasure,
         restriction and objection. Contact{" "}
-        <a href="mailto:hello@loancalclab.com" className="underline">hello@loancalclab.com</a>.
+        <a href={`mailto:${SITE.contactEmail}`} className="underline">{SITE.contactEmail}</a>.
         UK users may complain to the ICO (ico.org.uk).
       </p>
   

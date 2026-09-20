@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* Phase 1: static-friendly App Router site */
+  /* Cloudflare Pages: static HTML export (no Node server) */
+  output: "export",
+  images: {
+    unoptimized: true,
+  },
 };
 
 export default nextConfig;

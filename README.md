@@ -5,7 +5,7 @@ Calculator-first personal loan, EMI & debt payoff decision lab (Phase 1 foundati
 **Stack:** Next.js App Router · TypeScript · Tailwind CSS v4 · `en-GB`  
 **Accent:** `#c8102e` (sparingly) · soft `#fde8ec`  
 **Site path on box:** `/workspace/loancalc-lab`  
-**Domain placeholder:** loancalclab.com
+**Domain:** [loancalclab.net](https://loancalclab.net) (canonical; `.com` is taken)
 
 ## Features (Phase 1)
 
@@ -22,6 +22,7 @@ Calculator-first personal loan, EMI & debt payoff decision lab (Phase 1 foundati
 - Trust/legal: Privacy, Cookie, Terms, Editorial, Advertising, Affiliate, Calculator disclaimer
 - SEO: unique titles/descriptions, `robots.ts`, `sitemap.ts`, Open Graph, JSON-LD
 - AdSense slots feature-flagged **OFF** (`SITE.adsenseEnabled` in `src/content/site.ts`); preview mocks only
+- Static export (`output: "export"`) for Cloudflare Pages
 
 ## Run locally
 
@@ -38,14 +39,29 @@ Open [http://localhost:3000](http://localhost:3000) (or the port printed if 3000
 npm run dev -- -p 3002
 ```
 
-## Build
+## Build (static export)
 
 ```bash
 npm run build
-npm start   # production server
 ```
 
-## Zip for delivery (exclude node_modules / .next)
+This writes a static site to **`out/`** (no Node server). Suitable for Cloudflare Pages.
+
+Calculator maths runs client-side in the browser.
+
+## Deploy — Cloudflare Pages
+
+1. **Domain:** buy or point **loancalclab.net** via Cloudflare Registrar, or add the domain to Cloudflare DNS.
+2. **Pages project:** connect GitHub repo `Roderz-89/loancalc-lab`
+   - Build command: `npm run build`
+   - Output directory: `out`
+   - Node version: **20+**
+3. Attach custom domain **loancalclab.net** in Pages → Custom domains (SSL automatic via Cloudflare).
+4. Until the custom domain is attached, the `*.pages.dev` preview URL is fine. Vercel can remain as an interim host if already deployed.
+
+Next.js static export emits per-route HTML, so SPA-style `_redirects` are usually unnecessary.
+
+## Zip for delivery (exclude node_modules / .next / .git / out)
 
 From the parent folder:
 
@@ -54,8 +70,11 @@ cd /workspace
 zip -r loancalc-lab.zip loancalc-lab \
   -x "loancalc-lab/node_modules/*" \
   -x "loancalc-lab/.next/*" \
-  -x "loancalc-lab/.git/*"
+  -x "loancalc-lab/.git/*" \
+  -x "loancalc-lab/out/*"
 ```
+
+Run `npm run build` after unzip to regenerate `out/`.
 
 ## Push to empty GitHub remote
 
@@ -71,7 +90,7 @@ git remote add origin git@github.com:Roderz-89/loancalc-lab.git
 git push -u origin main
 ```
 
-Or unzip the delivery artefact and push from that tree. **Do not push from the agent unless asked.**
+Or unzip the delivery artefact and push from that tree.
 
 ## Environment
 
