@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { Breadcrumbs, type Crumb } from "@/components/layout/Breadcrumbs";
 import { RelatedLinks } from "@/components/content/RelatedLinks";
+import { AdSlot } from "@/components/calculator/AdSlot";
 
 export function ArticleLayout({
   title,
@@ -10,6 +11,7 @@ export function ArticleLayout({
   updated,
   children,
   related,
+  showAd = true,
 }: {
   title: string;
   description?: string;
@@ -18,6 +20,8 @@ export function ArticleLayout({
   updated?: string;
   children: ReactNode;
   related?: { href: string; label: string }[];
+  /** When false, skip end-of-article ad (legal / policy pages) */
+  showAd?: boolean;
 }) {
   return (
     <article className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
@@ -54,6 +58,7 @@ export function ArticleLayout({
       )}
       <div className="prose-custom mt-8 space-y-4 text-slate-700 leading-relaxed">{children}</div>
       {related && <RelatedLinks links={related} />}
+      {showAd && <AdSlot slot="end-of-article" format="rectangle" className="mt-8" />}
       <p className="mt-8 text-sm text-slate-500">
         Calculators and articles on LoanCalc Lab are illustrative and not personalised
         financial advice or a credit offer. Always check the lender’s disclosure for your

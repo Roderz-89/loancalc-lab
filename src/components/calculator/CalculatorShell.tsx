@@ -3,6 +3,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { DEFAULT_DISCLAIMER, SITE, formatContentDate } from "@/content/site";
+import { AdSlot } from "./AdSlot";
 
 export function CalculatorShell({
   title,
@@ -98,6 +99,8 @@ export function CalculatorShell({
           </p>
         </section>
       </div>
+
+      <AdSlot slot="calc-below-results" format="rectangle" className="mt-8" />
 
       <details className="mt-8 rounded-xl border border-slate-200 bg-white p-5 print:open">
         <summary className="cursor-pointer text-base font-semibold text-slate-900">

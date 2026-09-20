@@ -19,6 +19,7 @@ export default function Page() {
       ]}
       published="2026-09-14"
       updated="2026-09-15"
+      showAd={false}
     >
 
       <p>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CALCULATORS } from "@/content/calculators";
 import { GUIDES } from "@/content/guides";
 import { SITE, TRUST_STRIP, formatContentDate } from "@/content/site";
+import { AdSlot } from "@/components/calculator/AdSlot";
 
 export const metadata: Metadata = {
   title: "LoanCalc Lab — Personal loan, EMI & debt payoff calculators",
@@ -117,6 +118,10 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <AdSlot slot="home-below-tools" format="leaderboard" />
+      </div>
 
       <section className="border-y border-stone-200 bg-stone-50/80">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">

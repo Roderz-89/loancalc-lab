@@ -14,10 +14,18 @@ export const SITE = {
   editorial: "LoanCalc Lab editorial",
   /** Shared editorial “last checked” date */
   contentAsOf: "2026-09-15",
-  /** Show labelled mock AdSense placements (off — site should not feel unfinished) */
+  /** Show labelled mock AdSense placements for local UX review (not live ads) */
   adsensePreview: false,
-  /** Wire real AdSense only after go-live, approval, and consent */
-  adsenseEnabled: false,
+  /** Real AdSense; script loads unconditionally (Google CMP handles consent) */
+  adsenseEnabled: true,
+  /** Google AdSense publisher client ID (shared Rodway Labs account) */
+  adsenseClient: "ca-pub-7612291779397704",
+  /** AdSense unit IDs keyed by placement slot name */
+  adsenseSlots: {
+    "home-below-tools": "4458071941",
+    "calc-below-results": "9371397987",
+    "end-of-article": "8309597759",
+  },
   contactEmail: "hello@loancalclab.net",
   /** Brand umbrella (finance tools; Eng Hub stays separate) */
   brand: {

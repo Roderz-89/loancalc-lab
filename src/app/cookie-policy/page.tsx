@@ -18,19 +18,42 @@ export default function Page() {
         { label: 'Cookie policy' },
       ]}
       published="2026-09-14"
-      updated="2026-09-15"
+      updated="2026-09-20"
+      showAd={false}
     >
-
       <p>
-        LoanCalc Lab does not require cookies for calculators to work. If we enable analytics or
-        Google AdSense later, those services may set cookies or similar technologies. AdSense is
-        currently <strong>disabled</strong> (<code>adsenseEnabled: false</code>).
+        Cookies are small files stored on your device. LoanCalc Lab (Rodway Labs) uses
+        categories as follows:
       </p>
+      <ul className="list-disc space-y-2 pl-5">
+        <li>
+          <strong>Strictly necessary:</strong> may be used by hosting for security and load
+          balancing.
+        </li>
+        <li>
+          <strong>Analytics:</strong> not enabled by default.
+        </li>
+        <li>
+          <strong>Advertising:</strong> we use Google AdSense. Consent for advertising cookies
+          in the UK/EEA is handled by Google’s Privacy &amp; messaging (European regulations)
+          prompt, not a separate LoanCalc Lab banner. Ads and related cookies from Google and
+          partners may appear after Google approval and according to your choices in that
+          message.
+        </li>
+      </ul>
       <p>
-        When live advertising is turned on, we will update this policy and add an appropriate
-        consent mechanism where required.
+        You can control cookies via browser settings or via Google’s consent tools where shown.
+        Blocking some cookies may affect site functionality. See our{" "}
+        <a href="/privacy" className="underline">
+          privacy policy
+        </a>{" "}
+        and{" "}
+        <a href="/advertising-disclosure" className="underline">
+          advertising disclosure
+        </a>
+        .
       </p>
-  
-    </ArticleLayout>
+    
+</ArticleLayout>
   );
 }

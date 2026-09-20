@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { AdSenseLoader } from "@/components/ads/AdSenseLoader";
 import { SITE } from "@/content/site";
 import "./globals.css";
 
@@ -75,6 +76,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <AdSenseLoader />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

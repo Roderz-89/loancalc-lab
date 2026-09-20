@@ -18,19 +18,41 @@ export default function Page() {
         { label: 'Advertising disclosure' },
       ]}
       published="2026-09-14"
-      updated="2026-09-15"
+      updated="2026-09-20"
+      showAd={false}
     >
-
       <p>
-        LoanCalc Lab may display Google AdSense or similar ads in future. Right now{" "}
-        <strong>live ads are off</strong> (<code>adsenseEnabled: false</code>) and no ad
-        placeholders are shown on the site.
+        LoanCalc Lab (published by Rodway Labs) displays third-party advertising via Google
+        AdSense to help fund the site. Ads are labelled and placed sparingly (for example after
+        calculator results or at the end of an article) so they do not interrupt primary tools or
+        sit in the header/navigation. Ads may appear after Google AdSense approval.
       </p>
       <p>
-        Ads will never be presented as organic calculator results or as a credit offer from
-        LoanCalc Lab.
+        For visitors in the UK/EEA, consent for advertising cookies is managed through Google’s
+        Privacy &amp; messaging (European regulations) experience — we do not show a separate
+        LoanCalc Lab cookie banner. See our{" "}
+        <a href="/cookie-policy" className="underline">
+          cookie policy
+        </a>{" "}
+        and{" "}
+        <a href="/privacy" className="underline">
+          privacy policy
+        </a>
+        .
       </p>
-  
-    </ArticleLayout>
+      <p>
+        We do not accept payment to change calculator formulae or to present ads as organic
+        calculator results or as a credit offer from LoanCalc Lab. Ad content is served by Google
+        and its partners; LoanCalc Lab does not control individual creatives.
+      </p>
+      <p className="text-sm text-slate-500">
+        Affiliate links, if introduced later, will be covered separately in our{" "}
+        <a href="/affiliate-disclosure" className="underline">
+          affiliate disclosure
+        </a>
+        .
+      </p>
+    
+</ArticleLayout>
   );
 }

@@ -18,7 +18,8 @@ export default function Page() {
         { label: 'Privacy policy' },
       ]}
       published="2026-09-14"
-      updated="2026-09-16"
+      updated="2026-09-20"
+      showAd={false}
     >
 
       <p>
@@ -40,11 +41,19 @@ export default function Page() {
           <strong>Technical logs:</strong> standard hosting/CDN logs (IP, user agent) for security
           and reliability.
         </li>
-        <li>
-          <strong>Cookies / ads:</strong> when AdSense or analytics are enabled, those providers
-          may set cookies — see our{" "}
-          <a href="/cookie-policy" className="underline">cookie policy</a>. AdSense is
-          currently off (<code>adsenseEnabled: false</code>).
+                <li>
+          <strong>Cookies / ads:</strong> Google AdSense may show ads (after Google approval).
+          Consent for advertising cookies in the UK/EEA is handled by Google’s Privacy &amp;
+          messaging (European regulations) prompt. Google and partners may set advertising
+          cookies according to your choices there. See our{" "}
+          <a href="/cookie-policy" className="underline">
+            cookie policy
+          </a>{" "}
+          and{" "}
+          <a href="/advertising-disclosure" className="underline">
+            advertising disclosure
+          </a>
+          .
         </li>
       </ul>
       <h2 className="text-xl font-semibold text-slate-900 pt-2">Your rights</h2>
