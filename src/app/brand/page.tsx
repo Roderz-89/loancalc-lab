@@ -7,7 +7,7 @@ import { SITE } from "@/content/site";
 export const metadata: Metadata = {
   title: "Brand — Rodway Labs",
   description:
-    "LoanCalc Lab is part of Rodway Labs — tools to help you calculate life.",
+    "LoanCalc Lab is a Rodway Labs product — personal loan and debt-payoff tools, not property remortgage.",
   alternates: { canonical: `${SITE.url}/brand` },
   robots: { index: true, follow: true },
 };
@@ -21,7 +21,7 @@ export default function Page() {
         { label: "Brand" },
       ]}
       published="2026-09-16"
-      updated="2026-09-16"
+      updated="2026-09-21"
     >
       <div className="flex items-center gap-4 not-prose">
         <Image
@@ -38,8 +38,14 @@ export default function Page() {
       </div>
       <p>
         <strong>{SITE.name}</strong> is a product under the {SITE.brand.name} umbrella —{" "}
-        {SITE.brand.tagline}. The site name stays LoanCalc Lab; {SITE.brand.name} is the quiet
-        brand line behind borrower-facing calculators like this one.
+        {SITE.brand.tagline}. The public site name stays LoanCalc Lab; {SITE.brand.name} is
+        the publisher behind it.
+      </p>
+      <p>
+        LoanCalc Lab covers <strong>personal loans and debt payoff</strong> (payments,
+        consolidation, snowball vs avalanche, fee-adjusted true cost). It is{" "}
+        <strong>not</strong> a property remortgage product — home-loan switching and mortgage
+        advice sit outside this site.
       </p>
       <p>
         We keep branding light on purpose: clear tools first, a short umbrella credit in the

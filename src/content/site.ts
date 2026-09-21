@@ -3,7 +3,7 @@ export const SITE = {
   domain: "loancalclab.net",
   tagline: "See your payment, compare consolidation, pay debt faster",
   description:
-    "Free personal loan and debt calculators — EMI and monthly payments, consolidation break-even, snowball vs avalanche, fees and true cost — for UK, US, India and more. Clear maths, stated assumptions.",
+    "Free UK-first personal loan and debt calculators — EMI and monthly payments in £, consolidation break-even, snowball vs avalanche, fees and true cost. Country modes available as toggles. Clear maths, stated assumptions.",
   locale: "en-GB",
   accent: "#c8102e",
   /** Secondary accent for light visual differentiation from Remortgage Lab */
@@ -13,7 +13,7 @@ export const SITE = {
   /** Anonymous editorial byline — no personal name on site-facing content */
   editorial: "LoanCalc Lab editorial",
   /** Shared editorial “last checked” date */
-  contentAsOf: "2026-09-15",
+  contentAsOf: "2026-09-21",
   /** Show labelled mock AdSense placements for local UX review (not live ads) */
   adsensePreview: false,
   /** Real AdSense; script loads unconditionally (Google CMP handles consent) */
@@ -62,7 +62,7 @@ export const TRUST_STRIP = {
   signals: ["Free", "No signup", "Not a lender", "Maths disclosed"] as const,
   heroSignals: ["Not a lender", "Not credit advice", "Illustrative only"] as const,
   jurisdictionNote:
-    "Calculators support UK / US / India–SEA / AU / CA modes — always check local lender terms.",
+    "UK £ by default — switch country mode on a calculator when you need another currency. Always check local lender terms.",
   disclaimerHref: "/calculator-disclaimer",
   disclaimerLabel: "Calculator disclaimer",
 } as const;

@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { Breadcrumbs, type Crumb } from "@/components/layout/Breadcrumbs";
 import { RelatedLinks } from "@/components/content/RelatedLinks";
 import { AdSlot } from "@/components/calculator/AdSlot";
+import { SITE } from "@/content/site";
 
 export function ArticleLayout({
   title,
@@ -30,9 +31,10 @@ export function ArticleLayout({
       {description && <p className="mt-3 text-lg text-slate-600">{description}</p>}
       {(published || updated) && (
         <p className="mt-2 text-xs text-slate-500">
+          <span className="font-medium text-slate-700">{SITE.editorial}</span>
           {published && (
             <>
-              Published{" "}
+              {" · "}Published{" "}
               <time dateTime={published}>
                 {new Date(published).toLocaleDateString("en-GB", {
                   day: "numeric",

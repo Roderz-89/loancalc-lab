@@ -37,9 +37,10 @@ export default function HomePage() {
             What will you pay each month — and how can you clear debt faster?
           </h1>
           <p className="mt-5 max-w-2xl text-lg text-slate-600">
-            Work out your EMI or instalment, see whether consolidating saves money, and compare
-            snowball vs avalanche payoff — with fees and assumptions shown. Built for borrowers in
-            the UK, US, India and more.
+            Work out your EMI or instalment in £, see whether consolidating saves money, and
+            compare snowball vs avalanche payoff — with fees and assumptions shown. UK-first by
+            default; country modes are available as calculator toggles when you need another
+            currency or payment label.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link

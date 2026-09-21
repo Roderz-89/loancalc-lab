@@ -12,7 +12,8 @@ export function Footer() {
             <p className="font-semibold text-slate-900">{SITE.name}</p>
             <p className="mt-2 text-sm text-slate-600">{SITE.tagline}</p>
             <p className="mt-3 text-xs text-slate-500">
-              Calculators are illustrative and not personalised financial advice.
+              Independent informational site — not a lender or credit broker. Calculators are
+              illustrative and not personalised financial advice.
             </p>
             <Link
               href="/brand"
@@ -28,7 +29,7 @@ export function Footer() {
               <span className="text-xs leading-snug text-slate-600">
                 <span className="font-medium text-slate-800">{SITE.brand.name}</span>
                 <span className="block text-slate-500">
-                  Part of {SITE.brand.name} — {SITE.brand.tagline}
+                  Part of {SITE.brand.name}
                 </span>
               </span>
             </Link>
@@ -78,9 +79,8 @@ export function Footer() {
         </div>
         <p className="mt-8 border-t border-stone-200 pt-6 text-xs text-slate-500">
           © {year} {SITE.name}. Independent informational site — not a lender or credit broker.
-          {" · "}
-          Part of {SITE.brand.name} — {SITE.brand.tagline}.
         </p>
+        <p className="mt-2 text-xs text-slate-500">Part of {SITE.brand.name}.</p>
       </div>
     </footer>
   );
