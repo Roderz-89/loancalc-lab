@@ -66,6 +66,17 @@ export const GUIDES: GuideMeta[] = [
     relatedCalcs: ["/calculators/apr-true-cost", "/calculators/personal-loan-emi"],
   },
   {
+    slug: "arrangement-fees-and-apr",
+    title: "Arrangement fees and APR — why the quoted rate is not what you pay",
+    description:
+      "UK guide to why a quoted personal-loan rate is not the full cost when an arrangement fee applies: worked EXAMPLE with Loan B (£12,000 · 16.9% EXAMPLE · 60 months · £195 fee) and how cash received diverges from the face principal.",
+    href: "/guides/arrangement-fees-and-apr",
+    published: "2026-09-21",
+    updated: "2026-09-21",
+    priority: "P0",
+    relatedCalcs: ["/calculators/apr-true-cost", "/calculators/personal-loan-emi"],
+  },
+  {
     slug: "country-mode-help",
     title: "Country modes — currency & EMI conventions",
     description:

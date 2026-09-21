@@ -6,7 +6,7 @@ import { SITE } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Guides",
-  description: "EMI, amortisation, snowball vs avalanche, refinance and fee true-cost guides.",
+  description: "EMI, amortisation, snowball vs avalanche, refinance, fee true-cost and arrangement-fee APR guides.",
   alternates: { canonical: `${SITE.url}/guides` },
 };
 

@@ -24,6 +24,7 @@ export default function Page() {
       updated="2026-09-21"
       related={[
         { href: "/calculators/apr-true-cost", label: "APR / true cost calculator" },
+        { href: "/guides/arrangement-fees-and-apr", label: "Arrangement fees and APR" },
         { href: "/calculators/personal-loan-emi", label: "Personal loan / EMI calculator" },
         { href: "/glossary/apr", label: "APR glossary" },
       ]}
