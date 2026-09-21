@@ -39,10 +39,10 @@ export default function Page() {
         receive then diverge.
       </p>
       <p>
-        This guide stays on that single idea: why the rate on the quote is not the full story when a
-        fee sits on the advance. It uses a UK <strong>EXAMPLE</strong> in Loan B style (£12,000 ·
-        16.9% EXAMPLE · 60 months · £195 fee), shows how cash received, total repayable and an
-        illustrative fee-adjusted APR move apart from the headline percentage, and links the{" "}
+        This guide focuses on why the quoted rate is not the full story when a fee sits on the
+        advance. A UK <strong>EXAMPLE</strong> (Loan B: £12,000 · 16.9% EXAMPLE · 60 months · £195
+        fee) shows how cash received and an illustrative fee-adjusted APR move apart from the
+        headline percentage. Use the{" "}
         <Link href="/calculators/apr-true-cost" className="text-slate-900 underline">
           APR / true cost calculator
         </Link>{" "}
@@ -50,8 +50,8 @@ export default function Page() {
         <Link href="/guides/fees-apr-true-cost" className="text-slate-900 underline">
           Fees &amp; APR — headline rate vs true cost
         </Link>{" "}
-        guide for the wider fee-and-APR framing. It is explanatory maths under stated assumptions —
-        not a product recommendation and not a substitute for a lender’s regulated disclosure.
+        guide for the wider framing. Explanatory maths under stated assumptions — not a product
+        recommendation or a substitute for regulated disclosure.
       </p>
 
       <h2 className="text-xl font-semibold text-slate-900 pt-2">
@@ -92,11 +92,9 @@ export default function Page() {
         credit more expensive in cash-flow terms.
       </p>
       <p>
-        Financed fees and separately invoiced fees rearrange the same idea. If the fee is added to
-        the balance, you may receive the face cash but repay a larger principal. If you pay the fee
-        from savings, your net liquidity still falls by that amount for the privilege of taking the
-        loan. Always read how the fee is applied on the actual agreement; calculator assumptions are
-        labelled and simplified.
+        Financed or separately invoiced fees rearrange the same idea: you either repay a larger
+        principal or fund the fee from savings. Always read how the fee is applied on the agreement;
+        calculator assumptions are labelled and simplified.
       </p>
 
       <h2 className="text-xl font-semibold text-slate-900 pt-2">
@@ -140,11 +138,10 @@ export default function Page() {
         </li>
       </ul>
       <p>
-        The quoted rate is still 16.9% EXAMPLE. The EMI is still about £297.59 EXAMPLE. You repay as
-        if you borrowed £12,000 while only receiving £11,805. The illustrative effective APR rises to
-        roughly 17.66% EXAMPLE because that thinner advance must be equated to the same sixty
-        payments. The gap between 16.9% and ~17.66% is the numerical expression of “quoted rate ≠
-        what you pay” for this single fee pattern — not a ranking of two lenders’ brands.
+        The quoted rate is still 16.9% EXAMPLE and the EMI still ~£297.59 EXAMPLE — you repay as if
+        you borrowed £12,000 while receiving £11,805. The illustrative effective APR (~17.66% EXAMPLE)
+        is the numerical form of “quoted rate ≠ what you pay” for this fee pattern, not a brand
+        ranking.
       </p>
       <p>
         Reproduce the same inputs in the{" "}
@@ -181,13 +178,10 @@ export default function Page() {
         Why term length changes how hard a fee bites
       </h2>
       <p>
-        A fixed £195 EXAMPLE fee is the same number of pounds whether the term is 24 or 60 months.
-        Spread over fewer payments, that fee is a larger share of the economics of the advance, so
-        the uplift of an illustrative fee-adjusted APR over the quoted rate typically widens on
-        shorter terms and narrows on longer ones — even though the fee in pounds is unchanged. That
-        does not make a longer term “better”; longer terms usually raise total interest. It only
-        shows that fee impact and interest impact move on different levers. Change one input at a
-        time in the calculator when you explore that trade-off.
+        A fixed £195 EXAMPLE fee is the same in pounds on a 24- or 60-month term, but as a share of
+        the advance’s economics it usually lifts illustrative APR more on shorter terms. That does
+        not make a longer term “better” — longer terms usually raise total interest. Fee impact and
+        interest impact are different levers; change one input at a time in the calculator.
       </p>
 
       <h2 className="text-xl font-semibold text-slate-900 pt-2">
@@ -232,24 +226,18 @@ export default function Page() {
       </h2>
       <ul className="list-disc space-y-2 pl-5">
         <li>
-          Is the arrangement fee deducted from the advance, added to the loan, or payable separately?
+          Is the fee deducted from the advance, added to the loan, or payable separately — and how
+          much cash do you receive versus the face principal used to size the EMI?
         </li>
         <li>
-          How much cash do you actually receive versus the face principal used to size the EMI?
+          What total amount repayable and APR / representative APR does the lender disclose?
         </li>
         <li>
-          What is the total amount repayable over the stated term?
+          Are other costs (early settlement, optional insurance) outside a simple upfront-fee model?
         </li>
         <li>
-          What APR / representative APR and total charge for credit does the lender disclose?
-        </li>
-        <li>
-          Are there other costs (early-settlement charges, optional insurance, ongoing fees) outside
-          a single upfront-fee model?
-        </li>
-        <li>
-          If you change only the fee, or only the term, how do cash received and illustrative
-          effective APR move in the{" "}
+          If you change only the fee or term, how do cash received and illustrative effective APR
+          move in the{" "}
           <Link href="/calculators/apr-true-cost" className="text-slate-900 underline">
             APR / true cost calculator
           </Link>
@@ -259,19 +247,16 @@ export default function Page() {
 
       <h2 className="text-xl font-semibold text-slate-900 pt-2">Try the tools</h2>
       <p>
-        For EXAMPLE Loan B (£12,000 · 16.9% EXAMPLE quoted rate · 60 months · £195 fee), run the{" "}
+        For EXAMPLE Loan B (£12,000 · 16.9% · 60 months · £195 fee), run the{" "}
         <Link href="/calculators/apr-true-cost" className="text-slate-900 underline">
           APR / true cost calculator
-        </Link>{" "}
-        to see cash received, total repayable and the illustrative effective APR uplift over the
-        quoted rate. Read the companion{" "}
+        </Link>
+        . Pair{" "}
         <Link href="/guides/fees-apr-true-cost" className="text-slate-900 underline">
           Fees &amp; APR — headline rate vs true cost
         </Link>{" "}
-        guide for the wider headline-versus-true-cost framing on the same EXAMPLE. Change the fee or
-        the rate one at a time to watch quoted rate and fee-aware cost diverge. That is the point of
-        these pages: clearer cost maths under stated assumptions — not a pitch for any particular
-        loan.
+        for the wider framing. Change fee or rate one at a time — clearer cost maths under stated
+        assumptions, not a pitch for any loan.
       </p>
 
       <h2 className="text-xl font-semibold text-slate-900 pt-2">Disclaimer</h2>
