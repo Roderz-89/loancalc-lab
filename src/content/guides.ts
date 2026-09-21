@@ -98,9 +98,9 @@ export const GUIDES: GuideMeta[] = [
   },
   {
     slug: "snowball-vs-avalanche-with-fees",
-    title: "Snowball vs avalanche with fees — when consolidation flips the winner",
+    title: "Snowball vs avalanche with fees — when fees change the comparison",
     description:
-      "UK guide: how a fee on a new consolidation loan can change which payoff path wins on paper — snowball, avalanche, or consolidate — with the three-debt EXAMPLE and a £195 EXAMPLE fee.",
+      "UK guide: how a fee on a new consolidation loan can reorder snowball, avalanche and consolidate comparisons on paper — three-debt EXAMPLE and a £195 EXAMPLE fee; trade-offs only, no single winner.",
     href: "/guides/snowball-vs-avalanche-with-fees",
     published: "2026-09-21",
     updated: "2026-09-21",
@@ -167,13 +167,13 @@ export const GUIDES: GuideMeta[] = [
   },
   {
     slug: "country-mode-help",
-    title: "Country modes — currency & EMI conventions",
+    title: "Country mode help — currency & payment labels",
     description:
-      "How LoanCalc Lab’s US / India-SEA / AU / CA / UK modes work, and what we assume about interest.",
+      "Short help for LoanCalc Lab’s country toggle: UK (£) is the default; optional US / India-SEA / AU / CA modes only change currency and payment labels.",
     href: "/guides/country-mode-help",
     published: "2026-09-14",
-    updated: "2026-09-15",
+    updated: "2026-09-21",
     priority: "P1",
-    relatedCalcs: ["/calculators/personal-loan-emi", "/glossary/emi"],
+    relatedCalcs: ["/calculators/personal-loan-emi"],
   },
 ];
