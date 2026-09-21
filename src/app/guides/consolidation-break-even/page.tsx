@@ -32,6 +32,10 @@ export default function Page() {
           href: "/guides/snowball-vs-avalanche",
           label: "Snowball vs avalanche guide",
         },
+        {
+          href: "/guides/snowball-vs-avalanche-with-fees",
+          label: "Snowball vs avalanche with fees",
+        },
         { href: "/glossary/consolidation", label: "Consolidation glossary" },
       ]}
     >

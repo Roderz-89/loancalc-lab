@@ -45,7 +45,7 @@ export const GLOSSARY: GlossaryTerm[] = [
     shortDefinition:
       "A payoff strategy that clears the smallest balance first while making minimum payments on other debts, then rolls freed payments into the next smallest balance.",
     href: "/glossary/snowball",
-    related: ["/calculators/snowball-vs-avalanche", "/guides/snowball-vs-avalanche"],
+    related: ["/calculators/snowball-vs-avalanche", "/guides/snowball-vs-avalanche", "/guides/snowball-vs-avalanche-with-fees"],
     published: "2026-09-14",
     updated: "2026-09-14",
   },
@@ -55,7 +55,7 @@ export const GLOSSARY: GlossaryTerm[] = [
     shortDefinition:
       "A payoff strategy that targets the highest interest rate first to minimise total interest, while making minimum payments on other debts.",
     href: "/glossary/avalanche",
-    related: ["/calculators/snowball-vs-avalanche", "/guides/snowball-vs-avalanche"],
+    related: ["/calculators/snowball-vs-avalanche", "/guides/snowball-vs-avalanche", "/guides/snowball-vs-avalanche-with-fees"],
     published: "2026-09-14",
     updated: "2026-09-14",
   },
@@ -69,6 +69,7 @@ export const GLOSSARY: GlossaryTerm[] = [
       "/calculators/consolidation-break-even",
       "/calculators/apr-true-cost",
       "/guides/consolidation-break-even",
+      "/guides/snowball-vs-avalanche-with-fees",
     ],
     published: "2026-09-14",
     updated: "2026-09-14",

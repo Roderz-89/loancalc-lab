@@ -88,6 +88,10 @@ export function ConsolidationCalculator() {
           href: "/guides/consolidation-break-even",
           label: "Consolidation break-even guide",
         },
+        {
+          href: "/guides/snowball-vs-avalanche-with-fees",
+          label: "Snowball vs avalanche with fees",
+        },
         { href: "/guides/fees-apr-true-cost", label: "Fees & APR guide" },
         { href: "/glossary/consolidation", label: "Consolidation glossary" },
       ]}

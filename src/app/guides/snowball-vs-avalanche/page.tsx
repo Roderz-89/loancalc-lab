@@ -26,6 +26,10 @@ export default function Page() {
         { href: "/calculators/snowball-vs-avalanche", label: "Snowball vs avalanche calculator" },
         { href: "/calculators/extra-payment", label: "Extra payment calculator" },
         {
+          href: "/guides/snowball-vs-avalanche-with-fees",
+          label: "Snowball vs avalanche with fees",
+        },
+        {
           href: "/guides/consolidation-break-even",
           label: "Consolidation break-even guide",
         },

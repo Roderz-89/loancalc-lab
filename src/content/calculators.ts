@@ -54,6 +54,7 @@ export const CALCULATORS: CalculatorMeta[] = [
       "/calculators/snowball-vs-avalanche",
       "/calculators/apr-true-cost",
       "/guides/consolidation-break-even",
+      "/guides/snowball-vs-avalanche-with-fees",
       "/guides/fees-apr-true-cost",
       "/glossary/consolidation",
     ],
@@ -71,6 +72,7 @@ export const CALCULATORS: CalculatorMeta[] = [
       "/calculators/consolidation-break-even",
       "/calculators/extra-payment",
       "/guides/snowball-vs-avalanche",
+      "/guides/snowball-vs-avalanche-with-fees",
     ],
   },
   {

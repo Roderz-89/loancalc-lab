@@ -89,6 +89,10 @@ export function SnowballAvalancheCalculator() {
       methodNote={`${country.conventionNote} Extra (plus freed minimums) goes to the target debt each month.`}
       related={[
         { href: "/guides/snowball-vs-avalanche", label: "Snowball vs avalanche guide" },
+        {
+          href: "/guides/snowball-vs-avalanche-with-fees",
+          label: "Snowball vs avalanche with fees",
+        },
         { href: "/calculators/consolidation-break-even", label: "Consolidation break-even" },
         { href: "/calculators/extra-payment", label: "Extra payment" },
       ]}

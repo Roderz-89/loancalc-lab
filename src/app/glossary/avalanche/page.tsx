@@ -22,7 +22,11 @@ export default function Page() {
       updated="2026-09-14"
       related={[
           { href: "/calculators/snowball-vs-avalanche", label: "Snowball vs avalanche" },
-          { href: "/guides/snowball-vs-avalanche", label: "Strategy guide" }
+          { href: "/guides/snowball-vs-avalanche", label: "Strategy guide" },
+          {
+            href: "/guides/snowball-vs-avalanche-with-fees",
+            label: "Snowball vs avalanche with fees",
+          },
       ]}
     >
 

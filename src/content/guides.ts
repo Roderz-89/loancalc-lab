@@ -88,6 +88,20 @@ export const GUIDES: GuideMeta[] = [
     relatedCalcs: ["/calculators/consolidation-break-even", "/calculators/apr-true-cost"],
   },
   {
+    slug: "snowball-vs-avalanche-with-fees",
+    title: "Snowball vs avalanche with fees — when consolidation flips the winner",
+    description:
+      "UK guide: how a fee on a new consolidation loan can change which payoff path wins on paper — snowball, avalanche, or consolidate — with the three-debt EXAMPLE and a £195 EXAMPLE fee.",
+    href: "/guides/snowball-vs-avalanche-with-fees",
+    published: "2026-09-21",
+    updated: "2026-09-21",
+    priority: "P0",
+    relatedCalcs: [
+      "/calculators/snowball-vs-avalanche",
+      "/calculators/consolidation-break-even",
+    ],
+  },
+  {
     slug: "country-mode-help",
     title: "Country modes — currency & EMI conventions",
     description:

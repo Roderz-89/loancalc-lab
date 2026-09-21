@@ -27,6 +27,10 @@ export default function Page() {
             href: "/guides/consolidation-break-even",
             label: "Consolidation break-even guide",
           },
+          {
+            href: "/guides/snowball-vs-avalanche-with-fees",
+            label: "Snowball vs avalanche with fees",
+          },
       ]}
     >
 
