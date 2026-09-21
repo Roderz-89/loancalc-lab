@@ -192,25 +192,22 @@ export default function Page() {
       </p>
 
       <h2 className="text-xl font-semibold text-slate-900 pt-2">
-        What a better-looking consolidation would need (same debts)
+        What would flip this EXAMPLE
       </h2>
       <p>
-        The EXAMPLE above is chosen to show a cost <em>increase</em>, not to claim every
-        consolidation loses money. Holding the three debts fixed, a consolidation that matched the
-        £11,400 balance sum (instead of £12,000), carried a lower rate than the dear balances{" "}
-        <em>without</em> lifting Debt C above its 9.9% EXAMPLE, or cut the fee, would move the
-        lifetime comparison. Leaving Debt C outside the new loan and consolidating only A and B is
-        another modelling choice — still an EXAMPLE decision, not advice. Change one input at a time
-        in the calculator and watch monthly change, interest and fee-inclusive total cost flip sign.
+        The EXAMPLE above shows a cost <em>increase</em>, not a rule that every consolidation loses
+        money. Matching the £11,400 balance sum (instead of £12,000), cutting the fee, or leaving
+        Debt C outside the new loan would move the lifetime comparison. Change one input at a time
+        in the calculator and watch monthly change and fee-inclusive total cost flip sign.
       </p>
       <p>
-        Separately, keeping the debts and directing surplus after minimums (snowball or avalanche)
-        is a different strategy from taking new credit. The{" "}
+        Keeping the debts and directing surplus after minimums is a different strategy from new
+        credit. The{" "}
         <Link href="/guides/snowball-vs-avalanche" className="text-slate-900 underline">
           snowball vs avalanche guide
         </Link>{" "}
-        uses the same three EXAMPLE balances with a £75 EXAMPLE monthly extra; that path never
-        introduces a consolidation fee or a new rate on Debt C.
+        uses the same three EXAMPLE balances with a £75 EXAMPLE monthly extra — no consolidation fee
+        and no new rate on Debt C.
       </p>
 
       <h2 className="text-xl font-semibold text-slate-900 pt-2">
@@ -248,43 +245,34 @@ export default function Page() {
       <h2 className="text-xl font-semibold text-slate-900 pt-2">Practical checklist</h2>
       <ul className="list-disc space-y-2 pl-5">
         <li>
-          List every balance, contractual rate and minimum you would replace — including any cheap
-          debt that might become dearer under the consolidation rate
+          List every balance, rate and minimum — including cheap debt that may become dearer under
+          the consolidation rate
         </li>
         <li>
-          Compare the consolidation face amount with the sum of balances (and how any fee is funded)
+          Compare face amount with the sum of balances; put arrangement and exit fees in one pot
         </li>
         <li>
-          Put arrangement fees and any early-settlement / exit charges into the same cost pot
+          Record monthly change <em>and</em> fee-inclusive lifetime cost; fee break-even months need
+          a monthly saving
         </li>
         <li>
-          Record monthly change <em>and</em> fee-inclusive lifetime cost — a lower EMI from a longer
-          term is not automatically a cheaper loan
-        </li>
-        <li>
-          Note whether fee break-even months even apply (they need a monthly saving)
-        </li>
-        <li>
-          Remember credit checks and eligibility — calculators do not approve credit or guarantee a
-          rate
+          Calculators do not approve credit or guarantee a rate
         </li>
       </ul>
 
       <h2 className="text-xl font-semibold text-slate-900 pt-2">Try the calculators</h2>
       <p>
-        For the EXAMPLE above — three snowball-style debts versus a Loan B–style consolidation
-        (£12,000 · 16.9% EXAMPLE · 60 months · £195 fee) — start with the{" "}
+        For the EXAMPLE above (£12,000 · 16.9% · 60 months · £195 fee vs the three debts), start with
+        the{" "}
         <Link href="/calculators/consolidation-break-even" className="text-slate-900 underline">
           consolidation break-even calculator
         </Link>
-        . Change the consolidation amount, rate, term and fee one at a time to see when monthly
-        change and lifetime cost flip. Use the{" "}
+        . Change amount, rate, term and fee one at a time. Pair the{" "}
         <Link href="/calculators/apr-true-cost" className="text-slate-900 underline">
           APR / true cost calculator
         </Link>{" "}
-        when you want a fee-adjusted view of a single consolidation offer’s effective cost. The
-        point of these tools is clearer cost maths under stated assumptions — not a sales pitch to
-        roll debts together.
+        for a fee-adjusted view of a single offer. Clearer cost maths under stated assumptions — not
+        a pitch to roll debts together.
       </p>
 
       <h2 className="text-xl font-semibold text-slate-900 pt-2">Disclaimer</h2>
