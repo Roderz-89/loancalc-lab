@@ -56,11 +56,11 @@ export default function Page() {
         payment widget.
       </p>
 
-      <h2 className="text-xl font-semibold text-slate-900 pt-2">UK-first, with country modes</h2>
+      <h2 className="text-xl font-semibold text-slate-900 pt-2">UK is the primary audience</h2>
       <p>
-        Default framing is UK sterling (£). Calculators also offer country-mode toggles
-        (currency and payment labels) for other common markets. Those modes are switches on
-        the tools — not five equal markets competing in the site identity.
+        LoanCalc Lab is written first for UK borrowers using sterling (£). Other country
+        modes (currency and payment labels) are optional calculator toggles when you need
+        them — not the product story and not equal “home markets” on the site.
       </p>
 
       <h2 className="text-xl font-semibold text-slate-900 pt-2">Publisher</h2>
