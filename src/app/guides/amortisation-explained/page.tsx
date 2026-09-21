@@ -24,6 +24,7 @@ export default function Page() {
       updated="2026-09-21"
       related={[
         { href: "/calculators/amortisation", label: "Amortisation schedule" },
+        { href: "/guides/how-emi-works", label: "How EMI works" },
         {
           href: "/guides/how-to-read-an-amortisation-schedule",
           label: "How to read an amortisation schedule",
@@ -214,6 +215,54 @@ export default function Page() {
         ). An amortisation schedule complements those disclosures: it shows the path of interest
         and principal that produces the totals, under the model’s assumptions. LoanCalc Lab is not
         a lender and does not replace the lender’s figures.
+      </p>
+
+      <h2 className="text-xl font-semibold text-slate-900 pt-2">
+        A practical way to scan any schedule
+      </h2>
+      <p>
+        When you open a lender printout or the on-site tool, start with four checks rather than
+        reading every row. First, confirm the opening balance matches the cash you expect to
+        receive (or the financed amount if a fee is rolled in). Second, check that the payment
+        column is level for most of the term — a large jump mid-term often means a different rate,
+        a payment holiday, or a balloon. Third, find the month where principal first exceeds
+        interest inside the EMI; on EXAMPLE Loan A that crossover is around month 16. Fourth, read
+        the final balance row: it should reach zero (or a rounding residual of a few pence) under
+        the stated assumptions.
+      </p>
+      <p>
+        Those four checks answer the questions people usually bring to a schedule: “Am I still
+        mostly paying interest?”, “How much do I still owe halfway?”, and “Does this table match the
+        total repayable on the illustration?” If the totals diverge from the illustration by more
+        than rounding, stop and compare day-count, fee treatment and whether the rate is fixed.
+      </p>
+      <p>
+        Fees complicate the picture even when the EMI formula is unchanged. EXAMPLE Loan A uses a
+        £0 fee so cash received equals the £8,500 principal the schedule amortises. If an
+        arrangement fee reduced cash in hand while interest still ran on a higher financed amount,
+        the schedule’s “principal” column would not equal money you actually saw — total cost would
+        be higher for the same contractual rate. Keep fee treatment separate from the interest /
+        principal split when you compare offers.
+      </p>
+
+      <h2 className="text-xl font-semibold text-slate-900 pt-2">
+        Related guide — EMI maths behind the rows
+      </h2>
+      <p>
+        The schedule assumes a fixed reducing-balance payment. For the formula that sizes that
+        payment, and for why a flat-rate quote is not the same maths, see{" "}
+        <Link href="/guides/how-emi-works" className="text-slate-900 underline">
+          how EMI works
+        </Link>
+        . For a shorter column-by-column checklist, use{" "}
+        <Link
+          href="/guides/how-to-read-an-amortisation-schedule"
+          className="text-slate-900 underline"
+        >
+          how to read an amortisation schedule
+        </Link>
+        . Together with this page they cover the formula, the table, and a quick scanning habit —
+        still illustrative only, and still not a credit offer.
       </p>
 
       <h2 className="text-xl font-semibold text-slate-900 pt-2">Try the calculators</h2>
