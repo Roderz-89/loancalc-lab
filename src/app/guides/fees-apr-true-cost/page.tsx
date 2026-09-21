@@ -253,40 +253,31 @@ export default function Page() {
           Is the fee deducted from the advance, added to the loan, or payable separately?
         </li>
         <li>
-          How much cash do you actually receive versus the face principal used to size the EMI?
+          How much cash do you receive versus the face principal used to size the EMI?
         </li>
         <li>
-          What is the total amount repayable, and how does it change if you drop or raise the fee in
-          an illustrative comparison?
+          What total amount repayable and regulated APR / total charge for credit does the lender
+          disclose?
         </li>
         <li>
-          What APR / representative APR and total charge for credit does the lender disclose under UK
-          rules?
-        </li>
-        <li>
-          Are there other costs (early-settlement charges, optional insurance, payment holidays)
-          outside the simple upfront-fee model?
-        </li>
-        <li>
-          Does a longer term lower the EMI while raising total interest — a separate decision from
-          the fee itself?
+          Are other costs (early settlement, optional insurance) outside the simple upfront-fee
+          model — and does a longer term lower the EMI while raising total interest?
         </li>
       </ul>
 
       <h2 className="text-xl font-semibold text-slate-900 pt-2">Try the calculators</h2>
       <p>
-        For EXAMPLE Loan B (£12,000 · 16.9% EXAMPLE rate · 60 months · £195 fee), start with the{" "}
+        For EXAMPLE Loan B (£12,000 · 16.9% · 60 months · £195 fee), start with the{" "}
         <Link href="/calculators/apr-true-cost" className="text-slate-900 underline">
           APR / true cost calculator
-        </Link>{" "}
-        to see cash received, total repayable and the illustrative effective APR uplift. Use the{" "}
+        </Link>
+        . Pair the{" "}
         <Link href="/calculators/personal-loan-emi" className="text-slate-900 underline">
           personal loan / EMI calculator
         </Link>{" "}
-        when you want payment, interest and total repayable with the same principal, rate and term.
-        Change the fee or the rate one at a time to see how headline and true-cost views diverge.
-        That is the point of these tools: clearer cost maths under stated assumptions — not a pitch
-        for any particular loan.
+        for payment and total repayable. Change the fee or rate one at a time to see headline and
+        true-cost views diverge — clearer cost maths under stated assumptions, not a pitch for any
+        loan.
       </p>
 
       <h2 className="text-xl font-semibold text-slate-900 pt-2">Disclaimer</h2>
