@@ -202,12 +202,54 @@ export default function Page() {
         which plan you labelled.
       </p>
       <p>
+        Illustrative contrast (still labelled <strong>EXAMPLE</strong> — not advice). Keep Debts B
+        and C from above, but swap Debt A for a small cheap balance so order splits:
+      </p>
+      <ul className="list-disc space-y-2 pl-5">
+        <li>
+          <strong>EXAMPLE Debt A′:</strong> £800 balance · 6.9% EXAMPLE annual rate · £30 EXAMPLE
+          minimum / month
+        </li>
+        <li>
+          <strong>EXAMPLE Debt B:</strong> £3,400 · 22.0% · £90 minimum (unchanged)
+        </li>
+        <li>
+          <strong>EXAMPLE Debt C:</strong> £6,800 · 9.9% · £100 minimum (unchanged)
+        </li>
+        <li>
+          <strong>EXAMPLE extra:</strong> still £75 / month after all minimums
+        </li>
+      </ul>
+      <p>
+        Under snowball the first target is A′ (£800) — an early clear, then B, then C. Under
+        avalanche the first target is B (22.0%), while A′ waits even though it is smaller. In that
+        layout avalanche usually shows lower total interest in the model because more of the £75
+        hits the 22% balance sooner; snowball usually shows the first zero-balance month earlier.
+        This page does not crown either outcome: one reader may value the interest gap, another the
+        motivation of closing A′ quickly. Re-run the same inputs in the calculator and read months
+        and interest side by side rather than treating either label as a rule.
+      </p>
+      <p>
         That is the behaviour-versus-maths framing in one sentence: snowball optimises for
         momentum and closed accounts; avalanche optimises for interest cost under the model. Neither
         framing overrides priority debts, nor does a calculator know your household cash-flow stress.
         Run both with your numbers, read the months and interest side by side, and choose the plan
         you will actually keep — this guide will not declare a single “correct” method for every
         reader.
+      </p>
+
+      <h2 className="text-xl font-semibold text-slate-900 pt-2">
+        Sibling guide — fees change the picture
+      </h2>
+      <p>
+        Arrangement or balance-transfer fees can change cash in hand and effective cost even when
+        the headline rate looks familiar. If fees sit on one or more of the debts you are comparing,
+        read{" "}
+        <Link href="/guides/snowball-vs-avalanche-with-fees" className="text-slate-900 underline">
+          snowball vs avalanche with fees
+        </Link>{" "}
+        next, then return to the calculator with fee-aware inputs. The same “no single winner”
+        caution applies: fees alter the numbers; they do not invent a universal best plan.
       </p>
 
       <h2 className="text-xl font-semibold text-slate-900 pt-2">
