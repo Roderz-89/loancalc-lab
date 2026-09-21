@@ -23,14 +23,14 @@ export const GUIDES: GuideMeta[] = [
   },
   {
     slug: "amortisation-explained",
-    title: "Amortisation explained",
+    title: "Amortisation explained — how to read a loan schedule",
     description:
-      "How each payment splits into interest and principal, and why early months are interest-heavy.",
+      "UK guide to reading an amortisation schedule: interest vs principal over time, with a worked EXAMPLE for Loan A (£8,500 · 24.9% EXAMPLE · 48 months · £0 fee).",
     href: "/guides/amortisation-explained",
     published: "2026-09-14",
-    updated: "2026-09-15",
+    updated: "2026-09-21",
     priority: "P0",
-    relatedCalcs: ["/calculators/amortisation", "/calculators/extra-payment"],
+    relatedCalcs: ["/calculators/amortisation", "/calculators/personal-loan-emi"],
   },
   {
     slug: "snowball-vs-avalanche",
