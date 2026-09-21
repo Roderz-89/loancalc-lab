@@ -45,12 +45,12 @@ export const GUIDES: GuideMeta[] = [
   },
   {
     slug: "refinance-when-it-pays",
-    title: "Refinance a personal loan when it pays",
+    title: "Refinance a personal loan when it pays — fees vs a lower rate",
     description:
-      "Break-even thinking for refinancing: fees, remaining term, and when a lower rate is not enough.",
+      "UK personal-loan refinance guide: break-even maths with a worked EXAMPLE comparing Loan A (£8,500 · 24.9% · 48 months · £0 fee) to a lower-rate deal with a £195 fee — and when fees erase the benefit.",
     href: "/guides/refinance-when-it-pays",
     published: "2026-09-14",
-    updated: "2026-09-15",
+    updated: "2026-09-21",
     priority: "P0",
     relatedCalcs: ["/calculators/refinance-break-even", "/calculators/apr-true-cost"],
   },
