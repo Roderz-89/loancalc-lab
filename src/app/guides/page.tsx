@@ -6,7 +6,8 @@ import { SITE } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Guides",
-  description: "EMI, amortisation, how to read a schedule, snowball vs avalanche, refinance, early settlement, overpaying vs saving, fee true-cost, arrangement-fee APR, representative APR, consolidation break-even, snowball vs avalanche with fees, and using calculators with a lender illustration guides.",
+  description:
+    "Personal-loan guides: EMI, amortisation, snowball vs avalanche, refinance, fees and APR, consolidation, early settlement, and using calculators with a lender illustration.",
   alternates: { canonical: `${SITE.url}/guides` },
 };
 
@@ -14,7 +15,7 @@ export default function Page() {
   return (
     <ArticleLayout
       title="Guides"
-      description="Short, practical explainers tied to the calculators — fewer pages, clearer writing."
+      description="Core explainers plus companion guides tied to the calculators — UK examples, stated assumptions."
       crumbs={[
         { label: "Home", href: "/" },
         { label: "Guides" },

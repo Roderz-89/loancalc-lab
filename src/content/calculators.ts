@@ -2,6 +2,8 @@ export interface CalculatorMeta {
   slug: string;
   title: string;
   shortTitle: string;
+  /** One-line purpose for /calculators index */
+  purpose: string;
   description: string;
   href: string;
   priority: "P0" | "P1" | "P2";
@@ -14,6 +16,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     slug: "personal-loan-emi",
     title: "Personal loan / EMI payment calculator",
     shortTitle: "Loan EMI / payment",
+    purpose: "Monthly EMI / payment, total interest and repayable amount.",
     description:
       "Monthly payment (EMI), total interest and repayable amount with country-aware currency and reducing-balance assumptions.",
     href: "/calculators/personal-loan-emi",
@@ -31,6 +34,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     slug: "amortisation",
     title: "Amortisation schedule calculator",
     shortTitle: "Amortisation",
+    purpose: "Month-by-month principal and interest schedule for a personal loan.",
     description:
       "Month-by-month principal and interest split for a personal loan — preview the first N months plus lifetime totals.",
     href: "/calculators/amortisation",
@@ -46,6 +50,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     slug: "consolidation-break-even",
     title: "Debt consolidation break-even calculator",
     shortTitle: "Consolidation break-even",
+    purpose: "Compare keeping several debts versus one consolidation loan after fees.",
     description:
       "Compare keeping several debts versus one consolidation loan — fees, APR, term, monthly change and break-even.",
     href: "/calculators/consolidation-break-even",
@@ -64,6 +69,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     slug: "snowball-vs-avalanche",
     title: "Snowball vs avalanche payoff planner",
     shortTitle: "Snowball vs avalanche",
+    purpose: "Smallest-balance-first vs highest-rate-first payoff — months and interest side by side.",
     description:
       "Multi-debt payoff planner comparing smallest-balance-first vs highest-rate-first — months and interest side by side.",
     href: "/calculators/snowball-vs-avalanche",
@@ -80,6 +86,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     slug: "refinance-break-even",
     title: "Refinance when it pays",
     shortTitle: "Refinance break-even",
+    purpose: "Break-even months for refinancing a personal loan given fees, rate and term.",
     description:
       "Break-even months for refinancing a personal loan given fees, new rate and new term.",
     href: "/calculators/refinance-break-even",
@@ -96,6 +103,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     slug: "apr-true-cost",
     title: "APR / true cost of fees",
     shortTitle: "APR true cost",
+    purpose: "See how upfront fees raise effective borrowing cost versus the headline rate.",
     description:
       "See how upfront fees raise the effective cost of borrowing versus the headline interest rate.",
     href: "/calculators/apr-true-cost",
@@ -113,6 +121,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     slug: "extra-payment",
     title: "Extra payment / early payoff calculator",
     shortTitle: "Extra payment",
+    purpose: "Model regular extras or a lump sum — interest saved and months cut from the term.",
     description:
       "Model regular extra payments or a one-off lump sum — interest saved and months cut from the term.",
     href: "/calculators/extra-payment",

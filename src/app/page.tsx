@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CALCULATORS } from "@/content/calculators";
-import { GUIDES } from "@/content/guides";
+import { FEATURED_GUIDE_SLUGS, GUIDES } from "@/content/guides";
 import { SITE, TRUST_STRIP, formatContentDate } from "@/content/site";
 import { AdSlot } from "@/components/calculator/AdSlot";
 
@@ -11,14 +11,12 @@ export const metadata: Metadata = {
   alternates: { canonical: SITE.url },
 };
 
-const featured = CALCULATORS.filter((c) =>
-  [
-    "personal-loan-emi",
-    "amortisation",
-    "consolidation-break-even",
-    "snowball-vs-avalanche",
-  ].includes(c.slug)
-);
+/** All seven tools — keep homepage count aligned with /calculators */
+const featuredCalcs = CALCULATORS;
+
+const featuredGuides = FEATURED_GUIDE_SLUGS.map(
+  (slug) => GUIDES.find((g) => g.slug === slug)!,
+).filter(Boolean);
 
 export default function HomePage() {
   const updated = formatContentDate(SITE.contentAsOf);
@@ -94,17 +92,17 @@ export default function HomePage() {
 
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
         <div className="flex items-end justify-between gap-4">
-          <h2 className="text-2xl font-bold text-slate-900">Featured calculators</h2>
+          <h2 className="text-2xl font-bold text-slate-900">All seven calculators</h2>
           <Link
             href="/calculators"
             className="text-sm font-medium hover:underline"
             style={{ color: SITE.accent }}
           >
-            All calculators
+            Calculators index
           </Link>
         </div>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
-          {featured.map((c) => (
+          {featuredCalcs.map((c) => (
             <Link
               key={c.slug}
               href={c.href}
@@ -114,7 +112,7 @@ export default function HomePage() {
                 {c.decisionStage}
               </p>
               <h3 className="mt-1 text-lg font-semibold text-slate-900">{c.shortTitle}</h3>
-              <p className="mt-2 text-sm text-slate-600">{c.description}</p>
+              <p className="mt-2 text-sm text-slate-600">{c.purpose}</p>
             </Link>
           ))}
         </div>
@@ -173,12 +171,19 @@ export default function HomePage() {
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
         <div className="flex items-end justify-between gap-4">
           <h2 className="text-2xl font-bold text-slate-900">Guides worth reading first</h2>
-          <p className="text-xs text-slate-500">
-            Updated <time dateTime={SITE.contentAsOf}>{updated}</time>
-          </p>
+          <Link
+            href="/guides"
+            className="text-sm font-medium hover:underline"
+            style={{ color: SITE.accent }}
+          >
+            All guides
+          </Link>
         </div>
+        <p className="mt-2 text-xs text-slate-500">
+          Updated <time dateTime={SITE.contentAsOf}>{updated}</time>
+        </p>
         <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-          {GUIDES.filter((g) => g.priority === "P0").map((g) => (
+          {featuredGuides.map((g) => (
             <li key={g.slug}>
               <Link
                 href={g.href}

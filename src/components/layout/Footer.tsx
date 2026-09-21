@@ -28,9 +28,7 @@ export function Footer() {
               />
               <span className="text-xs leading-snug text-slate-600">
                 <span className="font-medium text-slate-800">{SITE.brand.name}</span>
-                <span className="block text-slate-500">
-                  Part of {SITE.brand.name}
-                </span>
+                <span className="block text-slate-500">{SITE.brand.tagline}</span>
               </span>
             </Link>
           </div>

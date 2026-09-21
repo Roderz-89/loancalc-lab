@@ -9,6 +9,15 @@ export interface GuideMeta {
   relatedCalcs: string[];
 }
 
+/** Rewritten core guides (Jobs 3a–3e) — homepage featured list */
+export const FEATURED_GUIDE_SLUGS = [
+  "how-emi-works",
+  "amortisation-explained",
+  "snowball-vs-avalanche",
+  "refinance-when-it-pays",
+  "fees-apr-true-cost",
+] as const;
+
 export const GUIDES: GuideMeta[] = [
   {
     slug: "how-emi-works",
@@ -28,17 +37,6 @@ export const GUIDES: GuideMeta[] = [
       "UK guide to reading an amortisation schedule: interest vs principal over time, with a worked EXAMPLE for Loan A (£8,500 · 24.9% EXAMPLE · 48 months · £0 fee).",
     href: "/guides/amortisation-explained",
     published: "2026-09-14",
-    updated: "2026-09-21",
-    priority: "P0",
-    relatedCalcs: ["/calculators/amortisation", "/calculators/personal-loan-emi"],
-  },
-  {
-    slug: "how-to-read-an-amortisation-schedule",
-    title: "How to read an amortisation schedule — column by column",
-    description:
-      "UK companion to the amortisation schedule tool: what Month, Payment, Interest, Principal and Balance mean, with a worked EXAMPLE for Loan A (£8,500 · 24.9% EXAMPLE · 48 months · £0 fee).",
-    href: "/guides/how-to-read-an-amortisation-schedule",
-    published: "2026-09-21",
     updated: "2026-09-21",
     priority: "P0",
     relatedCalcs: ["/calculators/amortisation", "/calculators/personal-loan-emi"],
@@ -65,29 +63,6 @@ export const GUIDES: GuideMeta[] = [
     priority: "P0",
     relatedCalcs: ["/calculators/refinance-break-even", "/calculators/apr-true-cost"],
   },
-
-  {
-    slug: "early-settlement-personal-loans",
-    title: "Early settlement on personal loans — rebate ideas, not promises",
-    description:
-      "UK high-level guide to early settlement on regulated personal loans: settlement figures, rebate ideas under consumer-credit rules, always checking the credit agreement — illustrative only, not legal advice.",
-    href: "/guides/early-settlement-personal-loans",
-    published: "2026-09-21",
-    updated: "2026-09-21",
-    priority: "P0",
-    relatedCalcs: ["/calculators/extra-payment", "/calculators/refinance-break-even"],
-  },
-  {
-    slug: "overpaying-vs-saving",
-    title: "Overpaying a personal loan vs saving — a trade-off frame",
-    description:
-      "UK trade-off guide: overpaying a personal loan versus putting the same cash into savings, with EXAMPLE Loan A (£8,500 · 24.9% EXAMPLE · 48 months · £0 fee) plus £75/month extra — illustrative only, no instruction to overpay or save.",
-    href: "/guides/overpaying-vs-saving",
-    published: "2026-09-21",
-    updated: "2026-09-21",
-    priority: "P0",
-    relatedCalcs: ["/calculators/extra-payment", "/calculators/personal-loan-emi"],
-  },
   {
     slug: "fees-apr-true-cost",
     title: "Fees & APR — headline rate vs true cost of credit",
@@ -105,17 +80,6 @@ export const GUIDES: GuideMeta[] = [
     description:
       "UK guide to why a quoted personal-loan rate is not the full cost when an arrangement fee applies: worked EXAMPLE with Loan B (£12,000 · 16.9% EXAMPLE · 60 months · £195 fee) and how cash received diverges from the face principal.",
     href: "/guides/arrangement-fees-and-apr",
-    published: "2026-09-21",
-    updated: "2026-09-21",
-    priority: "P0",
-    relatedCalcs: ["/calculators/apr-true-cost", "/calculators/personal-loan-emi"],
-  },
-  {
-    slug: "representative-apr",
-    title: "Representative APR — what the advertised rate does and does not mean",
-    description:
-      "UK guide to advertised representative APR: the 51% expectation test, representative examples, and why the figure on a loan advert is not a personalised quote for the reader.",
-    href: "/guides/representative-apr",
     published: "2026-09-21",
     updated: "2026-09-21",
     priority: "P0",
@@ -145,6 +109,50 @@ export const GUIDES: GuideMeta[] = [
       "/calculators/snowball-vs-avalanche",
       "/calculators/consolidation-break-even",
     ],
+  },
+  {
+    slug: "early-settlement-personal-loans",
+    title: "Early settlement on personal loans — rebate ideas, not promises",
+    description:
+      "UK high-level guide to early settlement on regulated personal loans: settlement figures, rebate ideas under consumer-credit rules, always checking the credit agreement — illustrative only, not legal advice.",
+    href: "/guides/early-settlement-personal-loans",
+    published: "2026-09-21",
+    updated: "2026-09-21",
+    priority: "P0",
+    relatedCalcs: ["/calculators/extra-payment", "/calculators/refinance-break-even"],
+  },
+  {
+    slug: "how-to-read-an-amortisation-schedule",
+    title: "How to read an amortisation schedule — column by column",
+    description:
+      "UK companion to the amortisation schedule tool: what Month, Payment, Interest, Principal and Balance mean, with a worked EXAMPLE for Loan A (£8,500 · 24.9% EXAMPLE · 48 months · £0 fee).",
+    href: "/guides/how-to-read-an-amortisation-schedule",
+    published: "2026-09-21",
+    updated: "2026-09-21",
+    priority: "P0",
+    relatedCalcs: ["/calculators/amortisation", "/calculators/personal-loan-emi"],
+  },
+  {
+    slug: "representative-apr",
+    title: "Representative APR — what the advertised rate does and does not mean",
+    description:
+      "UK guide to advertised representative APR: the 51% expectation test, representative examples, and why the figure on a loan advert is not a personalised quote for the reader.",
+    href: "/guides/representative-apr",
+    published: "2026-09-21",
+    updated: "2026-09-21",
+    priority: "P0",
+    relatedCalcs: ["/calculators/apr-true-cost", "/calculators/personal-loan-emi"],
+  },
+  {
+    slug: "overpaying-vs-saving",
+    title: "Overpaying a personal loan vs saving — a trade-off frame",
+    description:
+      "UK trade-off guide: overpaying a personal loan versus putting the same cash into savings, with EXAMPLE Loan A (£8,500 · 24.9% EXAMPLE · 48 months · £0 fee) plus £75/month extra — illustrative only, no instruction to overpay or save.",
+    href: "/guides/overpaying-vs-saving",
+    published: "2026-09-21",
+    updated: "2026-09-21",
+    priority: "P0",
+    relatedCalcs: ["/calculators/extra-payment", "/calculators/personal-loan-emi"],
   },
   {
     slug: "using-calculators-with-a-lender-illustration",
