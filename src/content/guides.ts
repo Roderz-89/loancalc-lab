@@ -147,7 +147,7 @@ export const GUIDES: GuideMeta[] = [
     slug: "overpaying-vs-saving",
     title: "Overpaying a personal loan vs saving — a trade-off frame",
     description:
-      "UK trade-off guide: overpaying a personal loan versus putting the same cash into savings, with EXAMPLE Loan A (£8,500 · 24.9% EXAMPLE · 48 months · £0 fee) plus £75/month extra — illustrative only, no instruction to overpay or save.",
+      "UK trade-off guide: overpaying a personal loan versus putting the same cash into savings, with EXAMPLE Loan A (£8,500 · 24.9% · 48 months · £0 fee) plus £50/month extra — illustrative only, not advice.",
     href: "/guides/overpaying-vs-saving",
     published: "2026-09-21",
     updated: "2026-09-21",

@@ -6,7 +6,7 @@ import { SITE } from "@/content/site";
 export const metadata: Metadata = {
   title: "Overpaying a personal loan vs saving — a trade-off frame",
   description:
-    "UK trade-off guide: overpaying a personal loan versus putting the same cash into savings, with EXAMPLE Loan A (£8,500 · 24.9% EXAMPLE · 48 months · £0 fee) plus £75/month extra — illustrative only, no instruction to overpay or save.",
+    "UK trade-off guide: overpaying a personal loan versus putting the same cash into savings, with EXAMPLE Loan A (£8,500 · 24.9% · 48 months · £0 fee) plus £50/month extra — illustrative only, not advice.",
   alternates: { canonical: `${SITE.url}/guides/overpaying-vs-saving` },
 };
 
@@ -28,33 +28,37 @@ export default function Page() {
           href: "/guides/early-settlement-personal-loans",
           label: "Early settlement on personal loans",
         },
-        { href: "/guides/amortisation-explained", label: "Amortisation explained" },
+        { href: "/guides/how-emi-works", label: "How EMI works" },
         { href: "/calculators/personal-loan-emi", label: "Personal loan / EMI calculator" },
       ]}
     >
       <p>
-        When a personal loan is on reducing-balance interest, every month’s contractual EMI first
-        covers interest on the outstanding balance and then chips away at principal. Spare cash that
-        is not already committed can be aimed at that balance (an overpayment) or parked in savings
-        (or left as spending headroom). Those are different economic outcomes: one reduces
-        interest you would otherwise pay; the other keeps cash available and may earn a savings
-        return. This page is a <strong>trade-off frame</strong> only. It is not advice to overpay,
-        not advice to save instead, and not a recommendation to borrow. LoanCalc Lab is not a
-        lender.
+        When a personal loan sits on reducing-balance interest, each contractual EMI first covers
+        interest on the outstanding balance and then reduces principal. Spare cash that is not already
+        committed can be aimed at that balance (an overpayment) or parked in savings. Those paths have
+        different outcomes: one reduces interest you would otherwise pay; the other keeps cash
+        available and may earn a savings return. This page is a <strong>trade-off frame</strong> only.
+        It is not advice to overpay, not advice to save instead, not a recommendation to borrow, and
+        not about mortgages. LoanCalc Lab is not a lender.
       </p>
       <p>
         The worked numbers use <strong>EXAMPLE Loan A</strong> (£8,500 · 24.9% EXAMPLE annual rate ·
-        48 months · £0 fee) plus an EXAMPLE extra of <strong>£75 per month</strong>. Figures come
-        from the same reducing-balance maths as the{" "}
+        48 months · £0 fee) plus an EXAMPLE extra of <strong>£50 per month</strong>. Figures follow
+        the same reducing-balance maths as the{" "}
         <Link href="/calculators/extra-payment" className="text-slate-900 underline">
           extra payment / early payoff calculator
         </Link>
         . They are illustrative under stated assumptions — not your agreement, not a settlement
-        figure, and not a forecast of what any savings account will pay.
+        figure, and not a forecast of any savings account’s return. For how the EMI itself is sized,
+        see{" "}
+        <Link href="/guides/how-emi-works" className="text-slate-900 underline">
+          how EMI works
+        </Link>
+        .
       </p>
 
       <h2 className="text-xl font-semibold text-slate-900 pt-2">
-        What the trade-off is actually comparing
+        What the trade-off is comparing
       </h2>
       <p>
         Treat the two paths as alternative uses of the <em>same</em> spare cash flow, after the
@@ -62,36 +66,35 @@ export default function Page() {
       </p>
       <ul className="list-disc space-y-2 pl-5">
         <li>
-          <strong>Overpay path (EXAMPLE):</strong> send an extra £75 each month to the loan (on top
-          of the contractual EMI). Under LoanCalc Lab’s simplifying assumptions, extras reduce the
-          term while the contractual EMI stays the same until the balance clears.
+          <strong>Overpay path (EXAMPLE):</strong> send an extra £50 each month to the loan on top of
+          the contractual EMI. Under LoanCalc Lab’s simplifying assumptions, extras shorten the term
+          while the contractual EMI stays the same until the balance clears.
         </li>
         <li>
-          <strong>Save path (EXAMPLE framing):</strong> keep paying only the contractual EMI, and
-          put that same £75 each month into accessible savings (or hold it as liquid cash). The loan
-          runs its original schedule; the cash stays yours to use without borrowing again.
+          <strong>Save path (EXAMPLE framing):</strong> keep paying only the contractual EMI, and put
+          that same £50 each month into accessible savings. The loan runs its original schedule; the
+          cash stays yours without needing to borrow again for a shock.
         </li>
       </ul>
       <p>
-        A fair comparison looks at more than “interest avoided versus interest earned”. Liquidity,
-        early-repayment terms, tax on savings interest, and whether you already have a usable
-        emergency buffer all sit in the frame. Public MoneyHelper guidance on paying down borrowing
-        versus building savings stresses looking at the whole picture — including whether early-
-        repayment costs could outweigh the interest you hope to avoid, and whether you can still
-        access funds in an emergency (
+        A fair comparison looks beyond “interest avoided versus interest earned”. Liquidity,
+        early-repayment terms, tax on savings interest, and whether you already have an emergency
+        buffer all sit in the frame. MoneyHelper’s guidance on reducing borrowing stresses looking at
+        the whole picture — including whether early-repayment costs could outweigh the interest you
+        hope to avoid (
         <a
-          href="https://www.moneyhelper.org.uk/en/everyday-money/credit/reduce-borrowing-on-credit"
+          href="https://www.moneyhelper.org.uk/en/everyday-money/credit/how-to-reduce-your-borrowing"
           className="text-slate-900 underline"
           rel="noopener noreferrer"
           target="_blank"
         >
           MoneyHelper — How to reduce your borrowing
         </a>
-        ). That is a comparison checklist, not a verdict for your household.
+        ). That is a checklist, not a verdict for your household.
       </p>
 
       <h2 className="text-xl font-semibold text-slate-900 pt-2">
-        Worked EXAMPLE — Loan A plus £75 extra
+        Worked EXAMPLE — Loan A plus £50 extra
       </h2>
       <p>
         All figures below are labelled <strong>EXAMPLE</strong>. They are not a live quote, not a
@@ -99,196 +102,157 @@ export default function Page() {
       </p>
       <ul className="list-disc space-y-2 pl-5">
         <li>
-          <strong>EXAMPLE Loan A:</strong> £8,500 principal · 24.9% EXAMPLE annual rate · 48 months
-          · £0 arrangement fee
+          <strong>EXAMPLE Loan A:</strong> £8,500 principal · 24.9% EXAMPLE annual rate · 48 months ·
+          £0 arrangement fee
         </li>
         <li>
-          <strong>Contractual EMI (EXAMPLE):</strong> about <strong>£281.36</strong> per month
+          <strong>Contractual EMI (EXAMPLE):</strong> about <strong>£281.36 EXAMPLE</strong> per month
         </li>
         <li>
           <strong>Base path (no extra):</strong> 48 months · total interest about{" "}
-          <strong>£5,005.36 EXAMPLE</strong>
+          <strong>£5,005 EXAMPLE</strong>
         </li>
         <li>
-          <strong>Overpay path:</strong> + £75 / month → about <strong>£356.36 EXAMPLE</strong>{" "}
-          total cash out each month until payoff
+          <strong>Overpay path:</strong> + £50 EXAMPLE / month → about{" "}
+          <strong>£331.36 EXAMPLE</strong> total cash out each month until payoff
         </li>
       </ul>
       <p>
         Under the calculator’s reducing-balance assumptions (no early-repayment charge modelled;
-        extras shorten the term), the overpay path clears in about <strong>34 months EXAMPLE</strong>{" "}
-        instead of 48 — roughly <strong>14 months EXAMPLE</strong> sooner — with total interest of
-        about <strong>£3,353 EXAMPLE</strong>. Interest avoided versus the base path is about{" "}
-        <strong>£1,652 EXAMPLE</strong>.
-      </p>
-      <p>
-        Those pounds of interest avoided are the headline “gain” on the overpay side of the frame.
-        They are not free money in your pocket on day one: they are interest you do not pay later
-        because the balance falls faster. You also send more cash to the lender each month for those
-        34 months, and once principal is repaid that cash is no longer sitting in your savings.
-      </p>
-      <p>
-        Re-run or tweak the same inputs in the{" "}
+        extras shorten the term), the overpay path clears in about <strong>37 months EXAMPLE</strong>{" "}
+        instead of 48 — roughly <strong>11 months EXAMPLE</strong> sooner — with total interest of
+        about <strong>£3,760 EXAMPLE</strong>. Interest avoided versus the base path is about{" "}
+        <strong>£1,245 EXAMPLE</strong>. Reproduce those inputs in the{" "}
         <Link href="/calculators/extra-payment" className="text-slate-900 underline">
-          extra payment / early payoff calculator
+          extra payment calculator
         </Link>
-        . Change the extra, the rate, or the term one at a time to see how sensitive the months-saved
-        and interest-saved outputs are. Treat every output as scenario maths.
+        .
       </p>
 
       <h2 className="text-xl font-semibold text-slate-900 pt-2">
-        The save-side of the same £75 EXAMPLE
+        Same £50 into savings instead (EXAMPLE sketch)
       </h2>
       <p>
-        If instead you keep the contractual £281.36 EXAMPLE EMI and put £75 each month into savings
-        for the same 34-month EXAMPLE window, you would have contributed about{" "}
-        <strong>£2,550 EXAMPLE</strong> of your own cash (75 × 34), plus whatever interest the
-        savings product credited — or minus tax if interest exceeds your Personal Savings Allowance.
-        Over the full original 48-month term, the same £75/month habit would accumulate about{" "}
-        <strong>£3,600 EXAMPLE</strong> of contributions before savings interest.
+        If you keep the contractual £281.36 EXAMPLE EMI and put £50 EXAMPLE each month into savings
+        while the loan runs, you contribute about <strong>£2,400 EXAMPLE</strong> over 48 months (or
+        about <strong>£1,850 EXAMPLE</strong> over the 37-month overpay horizon). At a modest{" "}
+        <strong>4% EXAMPLE AER</strong> compounded monthly, a regular £50 standing order earns only on
+        the order of <strong>£110–£195 EXAMPLE</strong> of savings interest over those horizons —
+        far below the ~£1,245 EXAMPLE loan interest avoided on the overpay path in this model.
       </p>
       <p>
-        Interest <em>earned</em> on that pile is typically far smaller, in percentage terms, than a
-        24.9% EXAMPLE loan rate — MoneyHelper notes that you will rarely earn more on savings than
-        you pay on borrowing (
+        That rate-gap sketch is common when unsecured loan rates sit well above typical
+        instant-access savings rates. MoneyHelper’s “pay off debt, save or invest” framing notes that
+        you will rarely earn more on savings than you pay on high-cost credit (
         <a
-          href="https://www.moneyhelper.org.uk/en/blog/debt-help/pay-off-debt-save-or-invest-first"
+          href="https://www.moneyhelper.org.uk/en/everyday-money/budgeting/should-i-pay-off-debt-or-save"
           className="text-slate-900 underline"
           rel="noopener noreferrer"
           target="_blank"
         >
-          MoneyHelper — Pay off debt, save or invest first?
+          MoneyHelper — Should I pay off debt or save?
         </a>
-        ). The trade-off frame still has to weigh that rate gap against liquidity: savings you keep
-        can pay for a boiler repair or a gap in income without a new application for credit; cash
-        already used to overpay a closed loan cannot be withdrawn from the lender.
+        ). The trade-off still has to weigh liquidity: savings you keep can cover a shock without a
+        new loan; cash locked into an early overpayment is harder to get back unless the agreement
+        allows redraw or you refinance.
       </p>
       <p>
-        A crude rate-gap sketch for the EXAMPLE (not a forecast): avoiding ~£1,652 EXAMPLE of loan
-        interest by overpaying is a large number next to interest you might earn on a few thousand
-        pounds of gradual savings at single-digit AER. That sketch does <em>not</em> decide the
-        trade-off on its own. It only shows why people often put expensive unsecured balances and
-        emergency buffers in the same conversation.
-      </p>
-
-      <h2 className="text-xl font-semibold text-slate-900 pt-2">
-        Rate gap, liquidity and early-repayment terms
-      </h2>
-      <p>
-        Three levers usually dominate the frame for a fixed-sum personal loan:
-      </p>
-      <ul className="list-disc space-y-2 pl-5">
-        <li>
-          <strong>Rate gap.</strong> Compare the contractual (or APR-style) cost of the loan with
-          the after-tax return you could reasonably expect on accessible savings. A wide gap — as in
-          EXAMPLE Loan A at 24.9% EXAMPLE versus typical instant-access savings rates — tilts the
-          pure interest maths toward overpaying <em>if</em> cash is truly spare and the agreement
-          allows extras without costly friction.
-        </li>
-        <li>
-          <strong>Liquidity / buffer.</strong> MoneyHelper’s emergency-savings framing commonly
-          points to building accessible cover for unexpected costs and income shocks, often
-          discussed in the region of three to six months of essential outgoings as a longer-term
-          target — while also noting that expensive or priority debts may sit ahead of that goal in
-          some situations (see the same MoneyHelper pages linked above). The point for this guide
-          is structural: a zero buffer can turn the next shock into new, expensive borrowing, which
-          can erase the interest you hoped to avoid by overpaying.
-        </li>
-        <li>
-          <strong>Agreement terms.</strong> Some personal loans allow unlimited overpayments; others
-          notice periods, caps, or early-settlement adjustments. “No early repayment fee” marketing
-          can still sit alongside settlement maths that is not “remaining principal only”. For full
-          early clearance rather than monthly extras, read{" "}
-          <Link
-            href="/guides/early-settlement-personal-loans"
-            className="text-slate-900 underline"
-          >
-            Early settlement on personal loans — rebate ideas, not promises
-          </Link>{" "}
-          and always use the lender’s settlement figure — not a blog EXAMPLE.
-        </li>
-      </ul>
-      <p>
-        None of those levers produces a universal answer. A household with no accessible cash and a
-        high EXAMPLE rate faces a different risk profile from a household with a solid buffer and
-        the same rate. The frame is there so you can see both sides; it is not a ranking of what you
-        “should” do.
+        The FCA’s Consumer Credit sourcebook sets how the total charge for credit and APR are
+        determined for regulated agreements — useful context when comparing cost-of-credit
+        disclosures on the loan side of this frame (
+        <a
+          href="https://www.handbook.fca.org.uk/handbook/CONC/App/1/"
+          className="text-slate-900 underline"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          FCA Handbook, CONC App 1
+        </a>
+        ). LoanCalc Lab’s tools do not calculate a statutory APR or a regulated settlement rebate.
       </p>
 
       <h2 className="text-xl font-semibold text-slate-900 pt-2">
-        What this EXAMPLE deliberately leaves out
+        Early settlement and overpayment caveats
       </h2>
-      <ul className="list-disc space-y-2 pl-5">
-        <li>Early-repayment charges, deferred settlement dates, or statutory rebate adjustments</li>
-        <li>Changes to your contractual EMI after a partial overpayment (some lenders re-cast the
-          payment instead of the term)</li>
-        <li>Tax on savings interest above your Personal Savings Allowance</li>
-        <li>Inflation, investment returns, or mortgage / remortgage products</li>
-        <li>Behavioural factors (whether an automatic overpayment is easier to stick to than a
-          savings standing order — or the reverse)</li>
-      </ul>
       <p>
-        LoanCalc Lab’s extra-payment tool states its assumptions on the calculator page. If your
-        lender applies extras differently, the months-saved and interest-saved figures will diverge
-        from the EXAMPLE.
+        Full early settlement is not the same as a gradual £50 EXAMPLE overpayment. Settling in full
+        needs the lender’s settlement figure — which may include rebate adjustments and any charges
+        the agreement allows. Partial overpayments may re-cast EMI or term differently by lender.
+        See{" "}
+        <Link href="/guides/early-settlement-personal-loans" className="text-slate-900 underline">
+          early settlement on personal loans
+        </Link>{" "}
+        before treating calculator interest-saved figures as a settlement quote. If the agreement
+        limits overpayments or applies an early-repayment charge, the EXAMPLE interest gap can shrink
+        or reverse on paper.
       </p>
 
       <h2 className="text-xl font-semibold text-slate-900 pt-2">
-        A neutral comparison checklist
+        Factors the £ figures do not decide
       </h2>
       <ul className="list-disc space-y-2 pl-5">
-        <li>Confirm the contractual EMI and how the lender applies overpayments (term vs EMI)</li>
-        <li>Note any early-repayment fee, notice period, or settlement rules in the agreement</li>
         <li>
-          Sketch interest avoided under labelled assumptions (for EXAMPLE Loan A + £75, about £1,652
-          EXAMPLE and ~14 months EXAMPLE shorter — verify in the calculator)
+          <strong>Rate gap.</strong> Compare the loan’s effective cost with the after-tax return you
+          could reasonably expect on accessible savings. A wide gap — as in EXAMPLE Loan A at 24.9%
+          EXAMPLE versus a low single-digit EXAMPLE savings AER — tilts the interest maths toward
+          overpaying, all else equal.
         </li>
         <li>
-          Sketch what the same £75/month would accumulate in accessible savings over a comparable
-          window, and what after-tax return looks plausible — without treating a blog AER as a quote
-        </li>
-        <li>Ask whether you already have a usable emergency buffer in instant-access form</li>
-        <li>
-          If full early settlement is on the table, request the lender’s settlement figure rather
-          than inventing a rebate
+          <strong>Liquidity / buffer.</strong> An emergency fund can matter more than maximising
+          interest avoided if a shock would otherwise force expensive new borrowing.
         </li>
         <li>
-          If contractual payments are already under pressure, that is a debt-advice problem — not an
-          elective overpay-versus-save optimisation
+          <strong>Agreement rules.</strong> Notice periods, overpayment caps, and settlement charges
+          change the cash maths.
+        </li>
+        <li>
+          <strong>Tax.</strong> Savings interest above your Personal Savings Allowance is taxable;
+          loan interest on a standard personal loan is not usually tax-deductible for individuals.
+        </li>
+        <li>
+          <strong>Behaviour.</strong> A standing order to the loan that you will keep may beat a
+          perfect spreadsheet plan you abandon.
         </li>
       </ul>
 
-      <h2 className="text-xl font-semibold text-slate-900 pt-2">Related tools on LoanCalc Lab</h2>
+      <h2 className="text-xl font-semibold text-slate-900 pt-2">Practical checklist</h2>
+      <ul className="list-disc space-y-2 pl-5">
+        <li>Confirm the contractual EMI is affordable before modelling extras</li>
+        <li>Read the early-repayment / overpayment section of the credit agreement</li>
+        <li>
+          Run EXAMPLE Loan A–style inputs (£8,500 · 24.9% · 48 · £0 · £50 extra) in the{" "}
+          <Link href="/calculators/extra-payment" className="text-slate-900 underline">
+            extra payment calculator
+          </Link>
+        </li>
+        <li>Sketch what the same £50/month would build in accessible savings over a similar horizon</li>
+        <li>Weigh liquidity and settlement rules alongside the interest gap</li>
+        <li>Do not treat this page as an instruction to overpay or to save</li>
+      </ul>
+
+      <h2 className="text-xl font-semibold text-slate-900 pt-2">Try the tools</h2>
       <p>
-        Use the{" "}
+        For EXAMPLE Loan A (£8,500 · 24.9% EXAMPLE · 48 months · £0 fee) with a £50 EXAMPLE monthly
+        extra, start with the{" "}
         <Link href="/calculators/extra-payment" className="text-slate-900 underline">
           extra payment / early payoff calculator
+        </Link>
+        . Change the extra one input at a time. Pair{" "}
+        <Link href="/guides/early-settlement-personal-loans" className="text-slate-900 underline">
+          early settlement on personal loans
         </Link>{" "}
-        for labelled illustrations of regular extras or a lump sum on a reducing-balance personal
-        loan. Use{" "}
-        <Link
-          href="/guides/early-settlement-personal-loans"
-          className="text-slate-900 underline"
-        >
-          Early settlement on personal loans
-        </Link>{" "}
-        when the question is full payoff and rebate ideas under UK consumer-credit rules — high-
-        level only, not a promised rebate amount. Neither page tells you to overpay or to save; both
-        exist so the trade-offs are clearer under stated assumptions.
+        when you are comparing a full payoff quote rather than a gradual overpayment. Clearer interest
+        maths under stated assumptions — not a sales pitch to overpay or to leave cash idle.
       </p>
 
       <h2 className="text-xl font-semibold text-slate-900 pt-2">Disclaimer</h2>
       <p>
-        This guide is illustrative and educational only. It is not personalised financial advice,
-        not legal advice, not a credit offer, and not an instruction to overpay a loan, to settle
-        early, or to save instead. EXAMPLE figures (including Loan A at £8,500 · 24.9% EXAMPLE · 48
-        months · £0 fee and a £75 monthly extra) are labelled scenarios under LoanCalc Lab’s
-        simplifying assumptions. They are not your lender’s schedule, settlement figure, or savings
-        rate. Regulated consumer-credit rules, product terms, tax treatment of savings interest and
-        your wider finances vary. Always check your credit agreement and, where relevant, the
-        lender’s official information before you change repayments. If you need advice on your
-        situation, speak to the lender and, where appropriate, a qualified adviser or a free
-        debt-advice service.
+        This guide and all EXAMPLE figures are illustrative only. They are not personalised financial
+        advice, not a credit offer, and not a recommendation to overpay, to save, to settle early, or
+        to take any loan. LoanCalc Lab is not a lender. Rates, fees, early-settlement terms,
+        day-count conventions, savings returns and tax treatment vary. Always read the lender’s
+        disclosure and credit agreement, and consider your own cash buffer, before you change how you
+        repay or where you park spare cash.
       </p>
     </ArticleLayout>
   );
