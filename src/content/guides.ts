@@ -12,12 +12,12 @@ export interface GuideMeta {
 export const GUIDES: GuideMeta[] = [
   {
     slug: "how-emi-works",
-    title: "How EMI works (reducing balance)",
+    title: "How EMI works — reducing balance, flat rates and true cost",
     description:
-      "What EMI means, the standard reducing-balance formula, and why flat-rate quotes look cheaper than they are.",
+      "UK guide to EMI on a reducing balance: the formula, a worked EXAMPLE with Loan A (£8,500), why flat-rate quotes mislead, and how fees change true cost and payoff clarity.",
     href: "/guides/how-emi-works",
     published: "2026-09-14",
-    updated: "2026-09-15",
+    updated: "2026-09-21",
     priority: "P0",
     relatedCalcs: ["/calculators/personal-loan-emi", "/calculators/amortisation"],
   },
