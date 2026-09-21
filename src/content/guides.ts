@@ -136,7 +136,7 @@ export const GUIDES: GuideMeta[] = [
     slug: "representative-apr",
     title: "Representative APR — what the advertised rate does and does not mean",
     description:
-      "UK guide to advertised representative APR: the 51% expectation test, representative examples, and why the figure on a loan advert is not a personalised quote for the reader.",
+      "UK guide to representative APR on personal-loan ads: the 51% expectation test, and a Loan B EXAMPLE (£12,000 · 16.9% · 60 months · £195 fee) contrasting headline figures with fee-inclusive true cost — not a personal quote.",
     href: "/guides/representative-apr",
     published: "2026-09-21",
     updated: "2026-09-21",
