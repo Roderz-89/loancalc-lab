@@ -26,6 +26,7 @@ export default function Page() {
         { href: "/calculators/apr-true-cost", label: "APR / true cost calculator" },
         { href: "/guides/representative-apr", label: "Representative APR explained" },
         { href: "/guides/arrangement-fees-and-apr", label: "Arrangement fees and APR" },
+        { href: "/guides/refinance-when-it-pays", label: "Refinance when it pays" },
         {
           href: "/guides/using-calculators-with-a-lender-illustration",
           label: "Using calculators with a lender illustration",
@@ -164,22 +165,47 @@ export default function Page() {
       </p>
 
       <h2 className="text-xl font-semibold text-slate-900 pt-2">
-        Same headline rate, different fees — why ranking by rate alone fails
+        Same headline rate, £0 fee vs £195 fee — side-by-side EXAMPLE
       </h2>
       <p>
-        Imagine a second EXAMPLE offer at the same 16.9% EXAMPLE headline and 60-month term, but with
-        a £0 fee. Cash received would be the full £12,000 EXAMPLE; the illustrative effective APR
-        would sit at the headline 16.9% EXAMPLE under the same model. The monthly EMI is identical to
-        Loan B’s (~£297.59 EXAMPLE) because the face principal and rate are unchanged — yet the
-        fee-free version delivers £195 more usable cash for the same payment stream. Ranking by
-        headline rate alone would call them equal; ranking by cash received, total cost of getting
-        the credit, or fee-aware APR would not.
+        Hold every input fixed except the fee. Both rows use <strong>£12,000 EXAMPLE</strong> face
+        principal · <strong>16.9% EXAMPLE</strong> headline · <strong>60 months EXAMPLE</strong>:
+      </p>
+      <ul className="list-disc space-y-2 pl-5">
+        <li>
+          <strong>EXAMPLE with £0 fee:</strong> cash received <strong>£12,000 EXAMPLE</strong> · EMI ≈{" "}
+          <strong>£297.59 EXAMPLE</strong> · total repayable ≈ <strong>£17,855 EXAMPLE</strong> ·
+          illustrative effective APR ≈ <strong>16.9% EXAMPLE</strong> (matches the headline under this
+          model)
+        </li>
+        <li>
+          <strong>EXAMPLE Loan B (£195 fee):</strong> cash received ≈ <strong>£11,805 EXAMPLE</strong> ·
+          EMI ≈ <strong>£297.59 EXAMPLE</strong> (unchanged) · total repayable ≈{" "}
+          <strong>£17,855 EXAMPLE</strong> · illustrative effective APR ≈{" "}
+          <strong>17.66% EXAMPLE</strong> (about <strong>0.76 percentage points EXAMPLE</strong> above
+          the headline)
+        </li>
+      </ul>
+      <p>
+        The headline rate string is identical. The EMI is identical. You still repay about £17,855
+        EXAMPLE over five years. What changed is usable cash: Loan B leaves you{" "}
+        <strong>£195 EXAMPLE</strong> short of the fee-free version for the same payment stream. That
+        is why ranking by headline rate alone fails — and why a fee-aware true-cost view exists.
       </p>
       <p>
-        The reverse trap also appears in advertising: a slightly lower headline rate with a large
-        fee can look “cheaper” on the percentage string while cash-in-hand and total charge tell a
-        worse story. Compare <strong>total amount repayable</strong>, fees, and the regulated APR /
-        cost-of-credit figures on the disclosure — not the interest percentage in isolation.
+        The reverse advertising trap is common too: a slightly lower headline with a large fee can
+        look “cheaper” on the percentage while cash-in-hand and total charge tell a worse story.
+        Compare <strong>total amount repayable</strong>, fees, and the lender’s regulated APR /
+        cost-of-credit disclosure — not the interest percentage in isolation. For product-fee detail,
+        see{" "}
+        <Link href="/guides/arrangement-fees-and-apr" className="text-slate-900 underline">
+          arrangement fees and APR
+        </Link>
+        ; for when a fee erases a refinance rate cut, see{" "}
+        <Link href="/guides/refinance-when-it-pays" className="text-slate-900 underline">
+          refinance a personal loan when it pays
+        </Link>
+        .
       </p>
 
       <h2 className="text-xl font-semibold text-slate-900 pt-2">
