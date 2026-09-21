@@ -73,7 +73,12 @@ export default function Page() {
         for how we maintain calculators and guides.
       </p>
       <p>
-        Questions or corrections: see{" "}
+        Questions or corrections: email{" "}
+        <a href={`mailto:${SITE.contactEmail}`} className="underline">
+          {SITE.contactEmail}
+        </a>
+        . We cannot give personalised lending advice or process applications. You may also use
+        the{" "}
         <Link href="/contact" className="underline">
           Contact
         </Link>
