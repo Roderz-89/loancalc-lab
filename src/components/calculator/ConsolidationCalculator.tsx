@@ -84,6 +84,10 @@ export function ConsolidationCalculator() {
       related={[
         { href: "/calculators/snowball-vs-avalanche", label: "Snowball vs avalanche" },
         { href: "/calculators/apr-true-cost", label: "APR true cost" },
+        {
+          href: "/guides/consolidation-break-even",
+          label: "Consolidation break-even guide",
+        },
         { href: "/guides/fees-apr-true-cost", label: "Fees & APR guide" },
         { href: "/glossary/consolidation", label: "Consolidation glossary" },
       ]}

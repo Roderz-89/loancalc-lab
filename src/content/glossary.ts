@@ -68,6 +68,7 @@ export const GLOSSARY: GlossaryTerm[] = [
     related: [
       "/calculators/consolidation-break-even",
       "/calculators/apr-true-cost",
+      "/guides/consolidation-break-even",
     ],
     published: "2026-09-14",
     updated: "2026-09-14",

@@ -77,6 +77,17 @@ export const GUIDES: GuideMeta[] = [
     relatedCalcs: ["/calculators/apr-true-cost", "/calculators/personal-loan-emi"],
   },
   {
+    slug: "consolidation-break-even",
+    title: "Consolidation break-even — when one loan costs more after fees",
+    description:
+      "UK debt-consolidation guide: when rolling several debts into one loan costs more after fee and term, with a worked EXAMPLE using Loan B (£12,000 · 16.9% · 60 months · £195 fee) and three snowball-style balances.",
+    href: "/guides/consolidation-break-even",
+    published: "2026-09-21",
+    updated: "2026-09-21",
+    priority: "P0",
+    relatedCalcs: ["/calculators/consolidation-break-even", "/calculators/apr-true-cost"],
+  },
+  {
     slug: "country-mode-help",
     title: "Country modes — currency & EMI conventions",
     description:

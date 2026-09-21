@@ -25,6 +25,10 @@ export default function Page() {
       related={[
         { href: "/calculators/snowball-vs-avalanche", label: "Snowball vs avalanche calculator" },
         { href: "/calculators/extra-payment", label: "Extra payment calculator" },
+        {
+          href: "/guides/consolidation-break-even",
+          label: "Consolidation break-even guide",
+        },
         { href: "/glossary/snowball", label: "Snowball" },
         { href: "/glossary/avalanche", label: "Avalanche" },
       ]}

@@ -53,6 +53,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     related: [
       "/calculators/snowball-vs-avalanche",
       "/calculators/apr-true-cost",
+      "/guides/consolidation-break-even",
       "/guides/fees-apr-true-cost",
       "/glossary/consolidation",
     ],

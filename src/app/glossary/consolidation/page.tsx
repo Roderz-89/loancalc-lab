@@ -22,7 +22,11 @@ export default function Page() {
       updated="2026-09-14"
       related={[
           { href: "/calculators/consolidation-break-even", label: "Consolidation break-even" },
-          { href: "/calculators/apr-true-cost", label: "APR true cost" }
+          { href: "/calculators/apr-true-cost", label: "APR true cost" },
+          {
+            href: "/guides/consolidation-break-even",
+            label: "Consolidation break-even guide",
+          },
       ]}
     >
 
