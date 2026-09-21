@@ -34,14 +34,14 @@ export const GUIDES: GuideMeta[] = [
   },
   {
     slug: "snowball-vs-avalanche",
-    title: "Snowball vs avalanche — which payoff method?",
+    title: "Snowball vs avalanche — behaviour vs maths for multiple debts",
     description:
-      "Behavioural vs mathematical approaches to clearing multiple debts, with when each wins.",
+      "UK guide to debt snowball vs avalanche: behaviour versus interest maths, with a three-debt EXAMPLE (£1,200 @ 29.9%, £3,400 @ 22.0%, £6,800 @ 9.9%, extra £75/month).",
     href: "/guides/snowball-vs-avalanche",
     published: "2026-09-14",
-    updated: "2026-09-15",
+    updated: "2026-09-21",
     priority: "P0",
-    relatedCalcs: ["/calculators/snowball-vs-avalanche", "/calculators/consolidation-break-even"],
+    relatedCalcs: ["/calculators/snowball-vs-avalanche", "/calculators/extra-payment"],
   },
   {
     slug: "refinance-when-it-pays",
