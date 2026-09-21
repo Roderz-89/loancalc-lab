@@ -26,6 +26,10 @@ export default function Page() {
         { href: "/calculators/refinance-break-even", label: "Refinance break-even calculator" },
         { href: "/calculators/apr-true-cost", label: "APR / true cost calculator" },
         { href: "/guides/fees-apr-true-cost", label: "Fees & APR guide" },
+        {
+          href: "/guides/early-settlement-personal-loans",
+          label: "Early settlement on personal loans",
+        },
       ]}
     >
       <p>

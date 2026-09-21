@@ -54,6 +54,18 @@ export const GUIDES: GuideMeta[] = [
     priority: "P0",
     relatedCalcs: ["/calculators/refinance-break-even", "/calculators/apr-true-cost"],
   },
+
+  {
+    slug: "early-settlement-personal-loans",
+    title: "Early settlement on personal loans — rebate ideas, not promises",
+    description:
+      "UK high-level guide to early settlement on regulated personal loans: settlement figures, rebate ideas under consumer-credit rules, always checking the credit agreement — illustrative only, not legal advice.",
+    href: "/guides/early-settlement-personal-loans",
+    published: "2026-09-21",
+    updated: "2026-09-21",
+    priority: "P0",
+    relatedCalcs: ["/calculators/extra-payment", "/calculators/refinance-break-even"],
+  },
   {
     slug: "fees-apr-true-cost",
     title: "Fees & APR — headline rate vs true cost of credit",

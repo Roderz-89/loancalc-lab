@@ -88,6 +88,7 @@ export const CALCULATORS: CalculatorMeta[] = [
       "/calculators/apr-true-cost",
       "/calculators/personal-loan-emi",
       "/guides/refinance-when-it-pays",
+      "/guides/early-settlement-personal-loans",
     ],
   },
   {
@@ -120,6 +121,7 @@ export const CALCULATORS: CalculatorMeta[] = [
       "/calculators/amortisation",
       "/calculators/snowball-vs-avalanche",
       "/guides/amortisation-explained",
+      "/guides/early-settlement-personal-loans",
     ],
   },
 ];
