@@ -56,12 +56,12 @@ export const GUIDES: GuideMeta[] = [
   },
   {
     slug: "fees-apr-true-cost",
-    title: "Fees & APR — the true cost of credit",
+    title: "Fees & APR — headline rate vs true cost of credit",
     description:
-      "How arrangement fees, processing charges and similar costs raise the effective rate you pay.",
+      "UK guide to how arrangement fees raise effective cost vs a headline rate: worked EXAMPLE with Loan B (£12,000 · 16.9% EXAMPLE · 60 months · £195 fee) and what APR disclosures are for.",
     href: "/guides/fees-apr-true-cost",
     published: "2026-09-14",
-    updated: "2026-09-15",
+    updated: "2026-09-21",
     priority: "P0",
     relatedCalcs: ["/calculators/apr-true-cost", "/calculators/personal-loan-emi"],
   },
