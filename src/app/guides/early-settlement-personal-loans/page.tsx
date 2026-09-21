@@ -25,6 +25,10 @@ export default function Page() {
       related={[
         { href: "/calculators/extra-payment", label: "Extra payment / early payoff calculator" },
         {
+          href: "/guides/overpaying-vs-saving",
+          label: "Overpaying a personal loan vs saving",
+        },
+        {
           href: "/guides/refinance-when-it-pays",
           label: "Refinance a personal loan when it pays",
         },

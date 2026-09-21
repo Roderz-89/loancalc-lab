@@ -78,6 +78,17 @@ export const GUIDES: GuideMeta[] = [
     relatedCalcs: ["/calculators/extra-payment", "/calculators/refinance-break-even"],
   },
   {
+    slug: "overpaying-vs-saving",
+    title: "Overpaying a personal loan vs saving — a trade-off frame",
+    description:
+      "UK trade-off guide: overpaying a personal loan versus putting the same cash into savings, with EXAMPLE Loan A (£8,500 · 24.9% EXAMPLE · 48 months · £0 fee) plus £75/month extra — illustrative only, no instruction to overpay or save.",
+    href: "/guides/overpaying-vs-saving",
+    published: "2026-09-21",
+    updated: "2026-09-21",
+    priority: "P0",
+    relatedCalcs: ["/calculators/extra-payment", "/calculators/personal-loan-emi"],
+  },
+  {
     slug: "fees-apr-true-cost",
     title: "Fees & APR — headline rate vs true cost of credit",
     description:

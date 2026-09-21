@@ -62,6 +62,8 @@ export function ExtraPaymentCalculator() {
         { href: "/calculators/amortisation", label: "Amortisation schedule" },
         { href: "/calculators/snowball-vs-avalanche", label: "Snowball vs avalanche" },
         { href: "/guides/amortisation-explained", label: "Amortisation explained" },
+        { href: "/guides/overpaying-vs-saving", label: "Overpaying vs saving" },
+        { href: "/guides/early-settlement-personal-loans", label: "Early settlement guide" },
       ]}
       faqs={[
         {
