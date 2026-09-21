@@ -25,6 +25,10 @@ export default function Page() {
       related={[
         { href: "/calculators/personal-loan-emi", label: "Personal loan / EMI calculator" },
         { href: "/calculators/amortisation", label: "Amortisation schedule" },
+        {
+          href: "/guides/using-calculators-with-a-lender-illustration",
+          label: "Using calculators with a lender illustration",
+        },
         { href: "/glossary/emi", label: "EMI glossary" },
       ]}
     >

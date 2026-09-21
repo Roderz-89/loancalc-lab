@@ -54,6 +54,10 @@ export function AprTrueCostCalculator() {
       related={[
         { href: "/guides/fees-apr-true-cost", label: "Fees & APR guide" },
         { href: "/guides/representative-apr", label: "Representative APR explained" },
+        {
+          href: "/guides/using-calculators-with-a-lender-illustration",
+          label: "Using calculators with a lender illustration",
+        },
         { href: "/calculators/personal-loan-emi", label: "EMI / payment" },
         { href: "/glossary/apr", label: "APR glossary" },
       ]}

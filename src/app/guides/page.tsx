@@ -6,7 +6,7 @@ import { SITE } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Guides",
-  description: "EMI, amortisation, how to read a schedule, snowball vs avalanche, refinance, early settlement, overpaying vs saving, fee true-cost, arrangement-fee APR, representative APR, consolidation break-even and snowball vs avalanche with fees guides.",
+  description: "EMI, amortisation, how to read a schedule, snowball vs avalanche, refinance, early settlement, overpaying vs saving, fee true-cost, arrangement-fee APR, representative APR, consolidation break-even, snowball vs avalanche with fees, and using calculators with a lender illustration guides.",
   alternates: { canonical: `${SITE.url}/guides` },
 };
 

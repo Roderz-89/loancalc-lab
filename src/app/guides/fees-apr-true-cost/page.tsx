@@ -26,6 +26,10 @@ export default function Page() {
         { href: "/calculators/apr-true-cost", label: "APR / true cost calculator" },
         { href: "/guides/representative-apr", label: "Representative APR explained" },
         { href: "/guides/arrangement-fees-and-apr", label: "Arrangement fees and APR" },
+        {
+          href: "/guides/using-calculators-with-a-lender-illustration",
+          label: "Using calculators with a lender illustration",
+        },
         { href: "/calculators/personal-loan-emi", label: "Personal loan / EMI calculator" },
         { href: "/glossary/apr", label: "APR glossary" },
       ]}

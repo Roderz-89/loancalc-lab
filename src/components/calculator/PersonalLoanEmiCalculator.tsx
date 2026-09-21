@@ -55,6 +55,10 @@ export function PersonalLoanEmiCalculator() {
         { href: "/calculators/extra-payment", label: "Extra payment" },
         { href: "/calculators/apr-true-cost", label: "APR / true cost of fees" },
         { href: "/guides/how-emi-works", label: "How EMI works" },
+        {
+          href: "/guides/using-calculators-with-a-lender-illustration",
+          label: "Using calculators with a lender illustration",
+        },
         { href: "/guides/country-mode-help", label: "Country mode help" },
       ]}
       faqs={[

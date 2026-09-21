@@ -147,6 +147,17 @@ export const GUIDES: GuideMeta[] = [
     ],
   },
   {
+    slug: "using-calculators-with-a-lender-illustration",
+    title: "Using calculators with a lender illustration — amount, term, rate and fees",
+    description:
+      "UK guide to copying loan amount, term, rate and fees from a lender offer or pre-contract illustration into LoanCalc Lab tools — EXAMPLE figures only, with EMI and APR / true cost routes.",
+    href: "/guides/using-calculators-with-a-lender-illustration",
+    published: "2026-09-21",
+    updated: "2026-09-21",
+    priority: "P0",
+    relatedCalcs: ["/calculators/personal-loan-emi", "/calculators/apr-true-cost"],
+  },
+  {
     slug: "country-mode-help",
     title: "Country modes — currency & EMI conventions",
     description:
