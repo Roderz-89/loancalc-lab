@@ -11,12 +11,13 @@ import {
 import { calculateAmortisationSchedule } from "@/lib/calculators/amortisation";
 import { formatMoney, formatMoneyPrecise } from "@/lib/format";
 import { COUNTRY_OPTIONS, getCountry, type CountryCode } from "@/content/countries";
+import { EXAMPLE_LOAN_A, EXAMPLE_LOAN_A_NOTE } from "@/content/example-loan";
 
 const defaults = {
-  country: "UK" as CountryCode,
-  loanAmount: 10000,
-  annualRate: 8.9,
-  termMonths: 36,
+  country: EXAMPLE_LOAN_A.country,
+  loanAmount: EXAMPLE_LOAN_A.loanAmount,
+  annualRate: EXAMPLE_LOAN_A.annualRate,
+  termMonths: EXAMPLE_LOAN_A.termMonths,
   showMonths: 12,
 };
 
@@ -27,15 +28,19 @@ export function AmortisationCalculator() {
 
   const country = getCountry(s.country);
   const validation: string[] = [];
-  if (!(s.loanAmount > 0)) validation.push("Loan amount must be greater than zero.");
-  if (s.annualRate < 0 || s.annualRate > 50)
+  if (!Number.isFinite(s.loanAmount) || !(s.loanAmount > 0))
+    validation.push("Loan amount must be greater than zero.");
+  if (!Number.isFinite(s.annualRate) || s.annualRate < 0 || s.annualRate > 50)
     validation.push("Rate should be between 0% and 50%.");
-  if (s.termMonths < 1 || s.termMonths > 420)
+  if (!Number.isFinite(s.termMonths) || s.termMonths < 1 || s.termMonths > 420)
     validation.push("Term should be between 1 and 420 months.");
+  if (!Number.isFinite(s.showMonths) || s.showMonths < 1)
+    validation.push("Show-months must be at least 1.");
 
   const result = useMemo(() => {
     if (validation.length) return null;
     return calculateAmortisationSchedule(s);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [s, validation.length]);
 
   return (
@@ -44,6 +49,7 @@ export function AmortisationCalculator() {
       intro="See how each monthly payment splits into interest and principal. Preview the first N months and lifetime totals."
       onReset={() => setS(defaults)}
       validationMessages={validation}
+      methodNote={country.conventionNote}
       related={[
         { href: "/calculators/personal-loan-emi", label: "Personal loan / EMI" },
         { href: "/calculators/extra-payment", label: "Extra payment calculator" },
@@ -66,10 +72,14 @@ export function AmortisationCalculator() {
           <li>{country.conventionNote}</li>
           <li>Fixed payment equal to the standard amortising EMI for the chosen term.</li>
           <li>Schedule preview is capped for readability; totals use the full term.</li>
+          <li>Fees are not rolled into the schedule balance (match EMI tool with £0 fee for EXAMPLE Loan A).</li>
         </ul>
       }
       inputs={
         <>
+          <p className="rounded-lg border border-amber-200 bg-amber-50/70 px-3 py-2 text-xs leading-relaxed text-amber-950">
+            {EXAMPLE_LOAN_A_NOTE}
+          </p>
           <Field label="Country / region">
             <SelectInput
               value={s.country}
@@ -86,7 +96,10 @@ export function AmortisationCalculator() {
               step={100}
             />
           </Field>
-          <Field label="Annual interest rate">
+          <Field
+            label="Annual interest rate (EXAMPLE)"
+            hint="EXAMPLE rate — not a live quote"
+          >
             <NumInput
               suffix="%"
               value={s.annualRate}
@@ -132,7 +145,7 @@ export function AmortisationCalculator() {
               label="Total paid"
               value={formatMoney(result.totalPaid, s.country)}
             />
-            <div className="mt-4 overflow-x-auto rounded-lg border border-slate-200 bg-white">
+            <div className="mt-4 -mx-1 overflow-x-auto rounded-lg border border-slate-200 bg-white">
               <table className="min-w-full text-left text-xs text-slate-700">
                 <thead className="bg-slate-100 text-slate-600">
                   <tr>

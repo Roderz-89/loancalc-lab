@@ -27,22 +27,30 @@ export function AprTrueCostCalculator() {
 
   const country = getCountry(s.country);
   const validation: string[] = [];
-  if (!(s.loanAmount > 0)) validation.push("Loan amount must be greater than zero.");
-  if (s.upfrontFee >= s.loanAmount)
+  if (!Number.isFinite(s.loanAmount) || !(s.loanAmount > 0))
+    validation.push("Loan amount must be greater than zero.");
+  if (!Number.isFinite(s.headlineRate) || s.headlineRate < 0 || s.headlineRate > 50)
+    validation.push("Headline rate should be between 0% and 50%.");
+  if (!Number.isFinite(s.upfrontFee) || s.upfrontFee < 0)
+    validation.push("Fee cannot be negative.");
+  if (Number.isFinite(s.upfrontFee) && Number.isFinite(s.loanAmount) && s.upfrontFee >= s.loanAmount)
     validation.push("Fee should be less than the loan amount.");
-  if (s.termMonths < 1) validation.push("Term must be at least 1 month.");
+  if (!Number.isFinite(s.termMonths) || s.termMonths < 1)
+    validation.push("Term must be at least 1 month.");
 
   const result = useMemo(() => {
     if (validation.length) return null;
     return calculateAprTrueCost(s);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [s, validation.length]);
 
   return (
     <CalculatorShell
       title="APR / true cost of fees"
-      intro="See how an upfront fee raises the effective yearly cost versus the headline interest rate — useful when comparing offers."
+      intro="See how an upfront arrangement fee raises the effective yearly cost versus the headline interest rate — useful when comparing offers."
       onReset={() => setS(defaults)}
       validationMessages={validation}
+      methodNote={`${country.conventionNote} Effective APR treats the fee as reducing cash received while payments amortise the full principal.`}
       related={[
         { href: "/guides/fees-apr-true-cost", label: "Fees & APR guide" },
         { href: "/calculators/personal-loan-emi", label: "EMI / payment" },
@@ -52,6 +60,10 @@ export function AprTrueCostCalculator() {
         {
           q: "Is this the same as a regulated APR?",
           a: "No. It is an illustrative effective rate that treats the fee as reducing cash received while payments amortise the full principal. Local APR rules (UK, AU comparison rate, etc.) can differ — always read the lender disclosure.",
+        },
+        {
+          q: "Does the arrangement fee change the result?",
+          a: "Yes. Raising the upfront fee lowers cash received and increases the illustrative effective APR, even when the headline rate and contractual payment stay the same.",
         },
       ]}
       equations={
@@ -63,7 +75,7 @@ export function AprTrueCostCalculator() {
       assumptions={
         <ul className="list-disc space-y-1 pl-5">
           <li>{country.conventionNote}</li>
-          <li>Single upfront fee only; ongoing fees not modelled.</li>
+          <li>Single upfront / arrangement fee only; ongoing fees not modelled.</li>
           <li>Fee paid separately (not added to principal) unless you change the loan amount.</li>
         </ul>
       }
@@ -104,7 +116,10 @@ export function AprTrueCostCalculator() {
               step={1}
             />
           </Field>
-          <Field label="Upfront fee">
+          <Field
+            label="Upfront / arrangement fee"
+            hint="Changing this fee changes the effective APR"
+          >
             <NumInput
               prefix={country.currencySymbol}
               value={s.upfrontFee}

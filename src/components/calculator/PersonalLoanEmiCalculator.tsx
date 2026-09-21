@@ -5,20 +5,20 @@ import {
   CalculatorShell,
   Field,
   NumInput,
-  OptionalFeesDetails,
   ResultRow,
   SelectInput,
 } from "./CalculatorShell";
 import { calculatePersonalLoanEmi } from "@/lib/calculators/personal-loan-emi";
 import { formatMoney, formatMoneyPrecise, formatMonthsAsYearsMonths } from "@/lib/format";
 import { COUNTRY_OPTIONS, getCountry, type CountryCode } from "@/content/countries";
+import { EXAMPLE_LOAN_A, EXAMPLE_LOAN_A_NOTE } from "@/content/example-loan";
 
 const defaults = {
-  country: "UK" as CountryCode,
-  loanAmount: 10000,
-  annualRate: 8.9,
-  termMonths: 36,
-  upfrontFee: 0,
+  country: EXAMPLE_LOAN_A.country,
+  loanAmount: EXAMPLE_LOAN_A.loanAmount,
+  annualRate: EXAMPLE_LOAN_A.annualRate,
+  termMonths: EXAMPLE_LOAN_A.termMonths,
+  upfrontFee: EXAMPLE_LOAN_A.upfrontFee,
 };
 
 export function PersonalLoanEmiCalculator() {
@@ -28,16 +28,19 @@ export function PersonalLoanEmiCalculator() {
 
   const country = getCountry(s.country);
   const validation: string[] = [];
-  if (!(s.loanAmount > 0)) validation.push("Loan amount must be greater than zero.");
-  if (s.annualRate < 0 || s.annualRate > 50)
+  if (!Number.isFinite(s.loanAmount) || !(s.loanAmount > 0))
+    validation.push("Loan amount must be greater than zero.");
+  if (!Number.isFinite(s.annualRate) || s.annualRate < 0 || s.annualRate > 50)
     validation.push("Rate should be between 0% and 50%.");
-  if (s.termMonths < 1 || s.termMonths > 420)
+  if (!Number.isFinite(s.termMonths) || s.termMonths < 1 || s.termMonths > 420)
     validation.push("Term should be between 1 and 420 months.");
-  if (s.upfrontFee < 0) validation.push("Fee cannot be negative.");
+  if (!Number.isFinite(s.upfrontFee) || s.upfrontFee < 0)
+    validation.push("Fee cannot be negative.");
 
   const result = useMemo(() => {
     if (validation.length) return null;
     return calculatePersonalLoanEmi(s);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- validation rebuilt each render from s
   }, [s, validation.length]);
 
   return (
@@ -46,10 +49,10 @@ export function PersonalLoanEmiCalculator() {
       intro="Work out a reducing-balance monthly payment (EMI), total interest and amount repayable — with country-aware currency and labels."
       onReset={() => setS(defaults)}
       validationMessages={validation}
+      methodNote={country.conventionNote}
       related={[
         { href: "/calculators/amortisation", label: "Amortisation" },
-        { href: "/calculators/snowball-vs-avalanche", label: "Snowball vs avalanche" },
-        { href: "/calculators/consolidation-break-even", label: "Consolidation" },
+        { href: "/calculators/extra-payment", label: "Extra payment" },
         { href: "/calculators/apr-true-cost", label: "APR / true cost of fees" },
         { href: "/guides/how-emi-works", label: "How EMI works" },
         { href: "/guides/country-mode-help", label: "Country mode help" },
@@ -74,11 +77,17 @@ export function PersonalLoanEmiCalculator() {
         <ul className="list-disc space-y-1 pl-5">
           <li>{country.conventionNote}</li>
           <li>Fixed rate for the whole term; monthly payments in arrears.</li>
-          <li>Optional upfront fee is added to total repayable and reduces net proceeds; it is not rolled into the amortising balance unless you add it to the loan amount yourself.</li>
+          <li>
+            Optional upfront fee is added to total repayable and reduces net proceeds; it is not
+            rolled into the amortising balance unless you add it to the loan amount yourself.
+          </li>
         </ul>
       }
       inputs={
         <>
+          <p className="rounded-lg border border-amber-200 bg-amber-50/70 px-3 py-2 text-xs leading-relaxed text-amber-950">
+            {EXAMPLE_LOAN_A_NOTE}
+          </p>
           <Field label="Country / region" hint="Sets currency, number format and payment label">
             <SelectInput
               value={s.country}
@@ -95,7 +104,10 @@ export function PersonalLoanEmiCalculator() {
               step={100}
             />
           </Field>
-          <Field label="Annual interest rate">
+          <Field
+            label="Annual interest rate (EXAMPLE)"
+            hint="EXAMPLE rate — not a live quote"
+          >
             <NumInput
               suffix="%"
               value={s.annualRate}
@@ -114,17 +126,15 @@ export function PersonalLoanEmiCalculator() {
               step={1}
             />
           </Field>
-          <OptionalFeesDetails summary="Add fees (optional)">
-            <Field label="Upfront fee" hint="Arrangement or broker fee paid separately">
-              <NumInput
-                prefix={country.currencySymbol}
-                value={s.upfrontFee}
-                onChange={(n) => set("upfrontFee", n)}
-                min={0}
-                step={10}
-              />
-            </Field>
-          </OptionalFeesDetails>
+          <Field label="Upfront / arrangement fee" hint="Optional — £0 in EXAMPLE Loan A">
+            <NumInput
+              prefix={country.currencySymbol}
+              value={s.upfrontFee}
+              onChange={(n) => set("upfrontFee", n)}
+              min={0}
+              step={10}
+            />
+          </Field>
         </>
       }
       results={

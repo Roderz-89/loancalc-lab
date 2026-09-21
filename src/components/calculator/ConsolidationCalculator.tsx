@@ -40,8 +40,14 @@ export function ConsolidationCalculator() {
 
   const country = getCountry(s.country);
   const validation: string[] = [];
-  if (s.consolAmount <= 0) validation.push("Consolidation amount must be positive.");
-  if (s.consolTerm < 1) validation.push("Consolidation term must be at least 1 month.");
+  if (!Number.isFinite(s.consolAmount) || s.consolAmount <= 0)
+    validation.push("Consolidation amount must be positive.");
+  if (!Number.isFinite(s.consolTerm) || s.consolTerm < 1)
+    validation.push("Consolidation term must be at least 1 month.");
+  if (!Number.isFinite(s.consolRate) || s.consolRate < 0 || s.consolRate > 50)
+    validation.push("Consolidation rate should be between 0% and 50%.");
+  if (!Number.isFinite(s.consolFee) || s.consolFee < 0)
+    validation.push("Fees cannot be negative.");
 
   const result = useMemo(() => {
     if (validation.length) return null;
@@ -49,7 +55,14 @@ export function ConsolidationCalculator() {
       { balance: s.d1Balance, annualRate: s.d1Rate, monthlyPayment: s.d1Pay },
       { balance: s.d2Balance, annualRate: s.d2Rate, monthlyPayment: s.d2Pay },
       { balance: s.d3Balance, annualRate: s.d3Rate, monthlyPayment: s.d3Pay },
-    ].filter((d) => d.balance > 0 && d.monthlyPayment > 0);
+    ].filter(
+      (d) =>
+        Number.isFinite(d.balance) &&
+        Number.isFinite(d.annualRate) &&
+        Number.isFinite(d.monthlyPayment) &&
+        d.balance > 0 &&
+        d.monthlyPayment > 0
+    );
     if (!debts.length) return null;
     return calculateConsolidation({
       debts,
@@ -58,17 +71,20 @@ export function ConsolidationCalculator() {
       consolidationTermMonths: s.consolTerm,
       consolidationFee: s.consolFee,
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [s, validation.length]);
 
   return (
     <CalculatorShell
       title="Debt consolidation break-even"
-      intro="Compare keeping up to three debts versus one consolidation loan — monthly change, interest, fees and a simple fee break-even."
+      intro="Compare keeping up to three debts versus one consolidation loan — monthly change, total cost, fees and break-even month."
       onReset={() => setS(defaults)}
       validationMessages={validation}
+      methodNote={`${country.conventionNote} Fee break-even ≈ fee ÷ monthly saving when the new payment is lower.`}
       related={[
         { href: "/calculators/snowball-vs-avalanche", label: "Snowball vs avalanche" },
         { href: "/calculators/apr-true-cost", label: "APR true cost" },
+        { href: "/guides/fees-apr-true-cost", label: "Fees & APR guide" },
         { href: "/glossary/consolidation", label: "Consolidation glossary" },
       ]}
       faqs={[
@@ -81,7 +97,8 @@ export function ConsolidationCalculator() {
         <p>
           Keep path: simulate each debt with its minimum payment until cleared. Consolidation
           path: standard amortising loan on the consolidation principal. Fee break-even ≈ fee ÷
-          monthly saving when the new payment is lower.
+          monthly saving when the new payment is lower. Total cost = principal paid + interest
+          (+ fees on the consolidation path).
         </p>
       }
       assumptions={
@@ -171,7 +188,7 @@ export function ConsolidationCalculator() {
               step={1}
             />
           </Field>
-          <Field label="Fees">
+          <Field label="Fees" hint="Arrangement or broker fee">
             <NumInput
               prefix={country.currencySymbol}
               value={s.consolFee}
@@ -194,8 +211,9 @@ export function ConsolidationCalculator() {
               value={formatMonthsAsYearsMonths(result.keepMonthsToClear)}
             />
             <ResultRow
-              label="Keep: total interest"
-              value={formatMoney(result.keepTotalInterest, s.country)}
+              label="Keep: total cost"
+              value={formatMoney(result.keepTotalCost, s.country)}
+              hint="Principal + interest if you keep paying minima"
             />
             <ResultRow
               label="Consolidation monthly"
@@ -208,6 +226,11 @@ export function ConsolidationCalculator() {
               hint="Negative means lower monthly outgo"
             />
             <ResultRow
+              label="Consolidation total cost"
+              value={formatMoney(result.consolTotalCost, s.country)}
+              hint="Payments over the term + fees"
+            />
+            <ResultRow
               label="Consolidation interest"
               value={formatMoney(result.consolTotalInterest, s.country)}
             />
@@ -216,12 +239,13 @@ export function ConsolidationCalculator() {
               value={formatMoney(result.interestSaved, s.country)}
             />
             <ResultRow
-              label="Fee break-even"
+              label="Fee break-even month"
               value={
                 result.breakEvenMonths == null
                   ? "n/a (no monthly saving)"
                   : formatMonthsAsYearsMonths(result.breakEvenMonths)
               }
+              hint="Months until fee is covered by monthly saving"
             />
           </>
         ) : (

@@ -55,7 +55,7 @@ export const FOOTER_LEGAL = [
 ] as const;
 
 export const DEFAULT_DISCLAIMER =
-  "Illustrative only — not personalised financial advice and not a credit offer. Rates, fees and terms vary by lender and country. Check the lender’s disclosure before you borrow.";
+  "Illustrative only — not personalised advice, not a credit offer, and not a lender. Rates, fees and terms vary by lender and country. Check the lender’s disclosure before you borrow.";
 
 /** Calm clarity signals for header / hero trust strip (en-GB, not salesy) */
 export const TRUST_STRIP = {

@@ -13,6 +13,7 @@ export function CalculatorShell({
   assumptions,
   equations,
   validationMessages,
+  methodNote,
   disclaimer = DEFAULT_DISCLAIMER,
   onReset,
   related,
@@ -25,6 +26,8 @@ export function CalculatorShell({
   assumptions: ReactNode;
   equations?: ReactNode;
   validationMessages?: string[];
+  /** Short method note shown under results (before disclaimer) */
+  methodNote?: ReactNode;
   disclaimer?: string;
   onReset: () => void;
   related?: { href: string; label: string }[];
@@ -47,7 +50,7 @@ export function CalculatorShell({
         <time dateTime={SITE.contentAsOf}>{lastChecked}</time>
       </p>
 
-      <div className="mt-8 grid gap-8 lg:grid-cols-2 print:grid-cols-1">
+      <div className="mt-8 grid gap-8 lg:grid-cols-2 print:grid-cols-1 [&>section]:min-w-0">
         <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
           <div className="mb-4 flex items-center justify-between gap-3">
             <h2 className="text-lg font-semibold text-slate-900">Your inputs</h2>
@@ -72,6 +75,12 @@ export function CalculatorShell({
         <section className="rounded-2xl border border-slate-200 bg-slate-50 p-5 sm:p-6 print:border-slate-300">
           <h2 className="text-lg font-semibold text-slate-900">Results</h2>
           <div className="mt-4 space-y-3">{results}</div>
+          {methodNote && (
+            <p className="mt-5 rounded-lg border border-slate-200 bg-white px-3 py-2.5 text-xs leading-relaxed text-slate-600">
+              <span className="font-medium text-slate-800">Method: </span>
+              {methodNote}
+            </p>
+          )}
           {nextTools.length > 0 && (
             <div className="mt-5 border-t border-slate-200 pt-4 print:hidden">
               <p className="text-xs font-medium uppercase tracking-wide text-slate-500">

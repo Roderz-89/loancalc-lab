@@ -15,12 +15,13 @@ import {
   formatMonthsAsYearsMonths,
 } from "@/lib/format";
 import { COUNTRY_OPTIONS, getCountry, type CountryCode } from "@/content/countries";
+import { EXAMPLE_LOAN_A, EXAMPLE_LOAN_A_NOTE } from "@/content/example-loan";
 
 const defaults = {
-  country: "UK" as CountryCode,
-  loanAmount: 10000,
-  annualRate: 8.9,
-  termMonths: 48,
+  country: EXAMPLE_LOAN_A.country,
+  loanAmount: EXAMPLE_LOAN_A.loanAmount,
+  annualRate: EXAMPLE_LOAN_A.annualRate,
+  termMonths: EXAMPLE_LOAN_A.termMonths,
   extraMonthly: 50,
   oneOff: 0,
 };
@@ -32,13 +33,21 @@ export function ExtraPaymentCalculator() {
 
   const country = getCountry(s.country);
   const validation: string[] = [];
-  if (!(s.loanAmount > 0)) validation.push("Loan amount must be greater than zero.");
-  if (s.termMonths < 1) validation.push("Term must be at least 1 month.");
-  if (s.extraMonthly < 0 || s.oneOff < 0) validation.push("Extra amounts cannot be negative.");
+  if (!Number.isFinite(s.loanAmount) || !(s.loanAmount > 0))
+    validation.push("Loan amount must be greater than zero.");
+  if (!Number.isFinite(s.annualRate) || s.annualRate < 0 || s.annualRate > 50)
+    validation.push("Rate should be between 0% and 50%.");
+  if (!Number.isFinite(s.termMonths) || s.termMonths < 1 || s.termMonths > 420)
+    validation.push("Term should be between 1 and 420 months.");
+  if (!Number.isFinite(s.extraMonthly) || s.extraMonthly < 0)
+    validation.push("Extra monthly cannot be negative.");
+  if (!Number.isFinite(s.oneOff) || s.oneOff < 0)
+    validation.push("One-off amount cannot be negative.");
 
   const result = useMemo(() => {
     if (validation.length) return null;
     return calculateExtraPayment(s);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [s, validation.length]);
 
   return (
@@ -47,7 +56,9 @@ export function ExtraPaymentCalculator() {
       intro="See how a regular overpayment or a one-off lump sum cuts interest and shortens the term on a personal loan."
       onReset={() => setS(defaults)}
       validationMessages={validation}
+      methodNote={country.conventionNote}
       related={[
+        { href: "/calculators/personal-loan-emi", label: "Personal loan / EMI" },
         { href: "/calculators/amortisation", label: "Amortisation schedule" },
         { href: "/calculators/snowball-vs-avalanche", label: "Snowball vs avalanche" },
         { href: "/guides/amortisation-explained", label: "Amortisation explained" },
@@ -70,10 +81,15 @@ export function ExtraPaymentCalculator() {
           <li>{country.conventionNote}</li>
           <li>No early repayment charge modelled.</li>
           <li>Extra payments assumed to reduce term (not reduce future contractual payment).</li>
+          <li>Starts from the same EXAMPLE Loan A principal, rate and term as EMI / amortisation.</li>
         </ul>
       }
       inputs={
         <>
+          <p className="rounded-lg border border-amber-200 bg-amber-50/70 px-3 py-2 text-xs leading-relaxed text-amber-950">
+            {EXAMPLE_LOAN_A_NOTE} Default extra £50/month shows early-payoff impact; set to £0 to
+            match the base EMI schedule.
+          </p>
           <Field label="Country / region">
             <SelectInput
               value={s.country}
@@ -90,7 +106,10 @@ export function ExtraPaymentCalculator() {
               step={100}
             />
           </Field>
-          <Field label="Annual interest rate">
+          <Field
+            label="Annual interest rate (EXAMPLE)"
+            hint="EXAMPLE rate — not a live quote"
+          >
             <NumInput
               suffix="%"
               value={s.annualRate}

@@ -53,6 +53,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     related: [
       "/calculators/snowball-vs-avalanche",
       "/calculators/apr-true-cost",
+      "/guides/fees-apr-true-cost",
       "/glossary/consolidation",
     ],
   },
@@ -112,6 +113,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     priority: "P1",
     decisionStage: "Pay down faster",
     related: [
+      "/calculators/personal-loan-emi",
       "/calculators/amortisation",
       "/calculators/snowball-vs-avalanche",
       "/guides/amortisation-explained",

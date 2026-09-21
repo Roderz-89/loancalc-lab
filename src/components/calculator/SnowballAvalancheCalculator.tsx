@@ -39,7 +39,8 @@ export function SnowballAvalancheCalculator() {
 
   const country = getCountry(s.country);
   const validation: string[] = [];
-  if (s.extraMonthly < 0) validation.push("Extra payment cannot be negative.");
+  if (!Number.isFinite(s.extraMonthly) || s.extraMonthly < 0)
+    validation.push("Extra payment cannot be negative.");
 
   const result = useMemo(() => {
     if (validation.length) return null;
@@ -65,17 +66,27 @@ export function SnowballAvalancheCalculator() {
         annualRate: s.d3Rate,
         minPayment: s.d3Min,
       },
-    ].filter((d) => d.balance > 0 && d.minPayment > 0);
+    ].filter(
+      (d) =>
+        Number.isFinite(d.balance) &&
+        Number.isFinite(d.annualRate) &&
+        Number.isFinite(d.minPayment) &&
+        d.balance > 0 &&
+        d.minPayment > 0
+    );
+    // Tool always exposes three debt slots; need at least two active for a comparison.
     if (debts.length < 2) return null;
     return compareSnowballAvalanche({ debts, extraMonthly: s.extraMonthly });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [s, validation.length]);
 
   return (
     <CalculatorShell
       title="Snowball vs avalanche"
-      intro="Compare smallest-balance-first (snowball) with highest-rate-first (avalanche) on up to three debts — months and interest side by side."
+      intro="Compare smallest-balance-first (snowball) with highest-rate-first (avalanche) on three debts — months and interest side by side."
       onReset={() => setS(defaults)}
       validationMessages={validation}
+      methodNote={`${country.conventionNote} Extra (plus freed minimums) goes to the target debt each month.`}
       related={[
         { href: "/guides/snowball-vs-avalanche", label: "Snowball vs avalanche guide" },
         { href: "/calculators/consolidation-break-even", label: "Consolidation break-even" },
@@ -98,7 +109,7 @@ export function SnowballAvalancheCalculator() {
         <ul className="list-disc space-y-1 pl-5">
           <li>{country.conventionNote}</li>
           <li>Interest accrues monthly on each remaining balance before payment.</li>
-          <li>Needs at least two debts with balance and minimum payment.</li>
+          <li>Three debt inputs by default; needs at least two debts with balance and minimum payment.</li>
         </ul>
       }
       inputs={
@@ -206,7 +217,7 @@ export function SnowballAvalancheCalculator() {
           </>
         ) : (
           <p className="text-sm text-slate-500">
-            Enter at least two debts with balance and minimum payment.
+            Enter at least two debts with balance and minimum payment (three slots provided).
           </p>
         )
       }

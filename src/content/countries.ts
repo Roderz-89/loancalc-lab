@@ -16,6 +16,16 @@ export interface CountryConfig {
 
 export const COUNTRIES: CountryConfig[] = [
   {
+    code: "UK",
+    label: "United Kingdom",
+    currency: "GBP",
+    currencySymbol: "£",
+    locale: "en-GB",
+    paymentLabel: "Monthly repayment",
+    conventionNote:
+      "Capital-and-interest reducing balance; monthly rate = APR ÷ 12. Representative APR on UK credit ads may include fees — we model fees separately unless stated.",
+  },
+  {
     code: "US",
     label: "United States",
     currency: "USD",
@@ -55,20 +65,10 @@ export const COUNTRIES: CountryConfig[] = [
     conventionNote:
       "Reducing-balance amortising loan with monthly compounding for illustration. Some Canadian products use semi-annual compounding — check the disclosure.",
   },
-  {
-    code: "UK",
-    label: "United Kingdom",
-    currency: "GBP",
-    currencySymbol: "£",
-    locale: "en-GB",
-    paymentLabel: "Monthly repayment",
-    conventionNote:
-      "Capital-and-interest reducing balance; monthly rate = APR ÷ 12. Representative APR on UK credit ads may include fees — we model fees separately unless stated.",
-  },
 ];
 
 export function getCountry(code: CountryCode): CountryConfig {
-  return COUNTRIES.find((c) => c.code === code) ?? COUNTRIES[4];
+  return COUNTRIES.find((c) => c.code === code) ?? COUNTRIES[0];
 }
 
 export const COUNTRY_OPTIONS = COUNTRIES.map((c) => ({

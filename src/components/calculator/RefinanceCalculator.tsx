@@ -33,13 +33,26 @@ export function RefinanceCalculator() {
 
   const country = getCountry(s.country);
   const validation: string[] = [];
-  if (!(s.remainingBalance > 0)) validation.push("Balance must be greater than zero.");
-  if (s.remainingMonths < 1 || s.newTermMonths < 1)
+  if (!Number.isFinite(s.remainingBalance) || !(s.remainingBalance > 0))
+    validation.push("Balance must be greater than zero.");
+  if (!Number.isFinite(s.currentRate) || s.currentRate < 0 || s.currentRate > 50)
+    validation.push("Current rate should be between 0% and 50%.");
+  if (!Number.isFinite(s.newRate) || s.newRate < 0 || s.newRate > 50)
+    validation.push("New rate should be between 0% and 50%.");
+  if (
+    !Number.isFinite(s.remainingMonths) ||
+    s.remainingMonths < 1 ||
+    !Number.isFinite(s.newTermMonths) ||
+    s.newTermMonths < 1
+  )
     validation.push("Terms must be at least 1 month.");
+  if (!Number.isFinite(s.refinanceFees) || s.refinanceFees < 0)
+    validation.push("Fees cannot be negative.");
 
   const result = useMemo(() => {
     if (validation.length) return null;
     return calculateRefinanceBreakEven(s);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [s, validation.length]);
 
   return (
@@ -48,6 +61,7 @@ export function RefinanceCalculator() {
       intro="Estimate monthly saving, fee break-even months, and lifetime interest difference when refinancing a personal loan."
       onReset={() => setS(defaults)}
       validationMessages={validation}
+      methodNote={`${country.conventionNote} Break-even months ≈ refinance fees ÷ monthly payment saving.`}
       related={[
         { href: "/guides/refinance-when-it-pays", label: "Refinance guide" },
         { href: "/calculators/apr-true-cost", label: "APR true cost" },

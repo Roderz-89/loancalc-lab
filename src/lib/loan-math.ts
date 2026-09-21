@@ -13,10 +13,19 @@ export function monthlyPayment(
   annualRatePercent: number,
   termMonths: number
 ): number {
-  if (principal <= 0 || termMonths <= 0) return 0;
+  if (
+    !Number.isFinite(principal) ||
+    !Number.isFinite(annualRatePercent) ||
+    !Number.isFinite(termMonths) ||
+    principal <= 0 ||
+    termMonths <= 0
+  ) {
+    return 0;
+  }
   const r = monthlyRate(annualRatePercent);
   if (r === 0) return principal / termMonths;
   const factor = Math.pow(1 + r, termMonths);
+  if (!Number.isFinite(factor) || factor === 1) return principal / termMonths;
   return (principal * r * factor) / (factor - 1);
 }
 

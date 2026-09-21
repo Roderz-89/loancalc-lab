@@ -18,6 +18,7 @@ export interface ConsolidationInput {
 export interface ConsolidationResult {
   keepMonthlyTotal: number;
   keepTotalInterest: number;
+  keepTotalCost: number;
   keepMonthsToClear: number;
   consolMonthly: number;
   consolTotalInterest: number;
@@ -60,6 +61,8 @@ export function calculateConsolidation(input: ConsolidationInput): Consolidation
   const term = Math.max(1, Math.round(input.consolidationTermMonths));
   const fee = Math.max(0, input.consolidationFee);
   const principal = Math.max(0, input.consolidationAmount);
+  const keepPrincipal = input.debts.reduce((s, d) => s + Math.max(0, d.balance), 0);
+  const keepTotalCost = keepPrincipal + keep.keepTotalInterest;
   const consolMonthly = monthlyPayment(principal, input.consolidationRate, term);
   const { totalInterest, months, totalPaid } = amortise(
     principal,
@@ -82,6 +85,7 @@ export function calculateConsolidation(input: ConsolidationInput): Consolidation
   return {
     keepMonthlyTotal: keep.keepMonthlyTotal,
     keepTotalInterest: keep.keepTotalInterest,
+    keepTotalCost,
     keepMonthsToClear: keep.keepMonthsToClear,
     consolMonthly,
     consolTotalInterest: totalInterest,
