@@ -53,6 +53,7 @@ export function AprTrueCostCalculator() {
       methodNote={`${country.conventionNote} Effective APR treats the fee as reducing cash received while payments amortise the full principal.`}
       related={[
         { href: "/guides/fees-apr-true-cost", label: "Fees & APR guide" },
+        { href: "/guides/representative-apr", label: "Representative APR explained" },
         { href: "/calculators/personal-loan-emi", label: "EMI / payment" },
         { href: "/glossary/apr", label: "APR glossary" },
       ]}

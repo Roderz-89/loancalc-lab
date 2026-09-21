@@ -22,7 +22,8 @@ export default function Page() {
       updated="2026-09-14"
       related={[
           { href: "/calculators/apr-true-cost", label: "APR true cost" },
-          { href: "/guides/fees-apr-true-cost", label: "Fees & APR guide" }
+          { href: "/guides/fees-apr-true-cost", label: "Fees & APR guide" },
+          { href: "/guides/representative-apr", label: "Representative APR explained" },
       ]}
     >
 

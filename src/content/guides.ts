@@ -100,6 +100,17 @@ export const GUIDES: GuideMeta[] = [
     relatedCalcs: ["/calculators/apr-true-cost", "/calculators/personal-loan-emi"],
   },
   {
+    slug: "representative-apr",
+    title: "Representative APR — what the advertised rate does and does not mean",
+    description:
+      "UK guide to advertised representative APR: the 51% expectation test, representative examples, and why the figure on a loan advert is not a personalised quote for the reader.",
+    href: "/guides/representative-apr",
+    published: "2026-09-21",
+    updated: "2026-09-21",
+    priority: "P0",
+    relatedCalcs: ["/calculators/apr-true-cost", "/calculators/personal-loan-emi"],
+  },
+  {
     slug: "consolidation-break-even",
     title: "Consolidation break-even — when one loan costs more after fees",
     description:
