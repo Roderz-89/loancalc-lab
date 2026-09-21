@@ -112,9 +112,9 @@ export const GUIDES: GuideMeta[] = [
   },
   {
     slug: "early-settlement-personal-loans",
-    title: "Early settlement on personal loans — rebate ideas, not promises",
+    title: "Early settlement on personal loans — settlement figures, rebates and overpaying",
     description:
-      "UK high-level guide to early settlement on regulated personal loans: settlement figures, rebate ideas under consumer-credit rules, always checking the credit agreement — illustrative only, not legal advice.",
+      "UK guide to early settlement on personal loans: settlement figures, rebate ideas, and a Loan A EXAMPLE (£8,500 · 24.9% · 48 months · £0 fee) contrasting full settlement vs overpaying — illustrative only.",
     href: "/guides/early-settlement-personal-loans",
     published: "2026-09-21",
     updated: "2026-09-21",
