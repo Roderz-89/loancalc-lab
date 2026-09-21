@@ -35,6 +35,7 @@ export default function Page() {
         { href: "/calculators/apr-true-cost", label: "APR / true cost calculator" },
         { href: "/guides/how-emi-works", label: "How EMI works" },
         { href: "/guides/fees-apr-true-cost", label: "Fees & APR — headline rate vs true cost" },
+        { href: "/guides/arrangement-fees-and-apr", label: "Arrangement fees and APR" },
         { href: "/guides/representative-apr", label: "Representative APR explained" },
       ]}
     >
@@ -253,8 +254,18 @@ export default function Page() {
         >
           MoneyHelper — Options for borrowing money
         </a>
-        ). Copying fields into a calculator is one way to make that comparison concrete under
-        disclosed maths; it does not replace the lender’s disclosure.
+        ). The FCA’s Consumer Credit sourcebook sets how the total charge for credit and APR are
+        determined for regulated agreements (
+        <a
+          href="https://www.handbook.fca.org.uk/handbook/CONC/App/1/"
+          className="text-slate-900 underline"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          FCA Handbook, CONC App 1
+        </a>
+        ). Copying fields into a calculator makes a comparison concrete under disclosed maths; it
+        does not replace the lender’s disclosure or a statutory APR.
       </p>
 
       <h2 className="text-xl font-semibold text-slate-900 pt-2">
