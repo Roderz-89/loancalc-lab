@@ -6,7 +6,7 @@ import { SITE } from "@/content/site";
 export const metadata: Metadata = {
   title: "Refinance a personal loan when it pays — fees vs a lower rate",
   description:
-    "UK personal-loan refinance guide: break-even maths with a worked EXAMPLE comparing Loan A (£8,500 · 24.9% · 48 months · £0 fee) to a lower-rate deal with a £195 fee — and when fees erase the benefit.",
+    "UK personal-loan refinance guide: fees vs a lower rate, with EXAMPLE Loan A and EXAMPLE Loan B (£12,000 · 16.9% · 60 months · £195 fee) showing when arrangement costs erase the benefit.",
   alternates: { canonical: `${SITE.url}/guides/refinance-when-it-pays` },
 };
 
@@ -42,10 +42,9 @@ export default function Page() {
       </p>
       <p>
         The headline rate cut is the easy part. Arrangement fees, early-repayment charges on the old
-        agreement, a longer new term, and soft or hard credit checks can all change the maths. A
-        worked <strong>EXAMPLE</strong> below contrasts a Loan A–style deal (£8,500 · 24.9% EXAMPLE ·
-        48 months · £0 fee) with a lower-rate refinance that carries a £195 arrangement fee — and then
-        shows two ways that fee can wipe most or all of the apparent benefit.
+        agreement, a longer new term, and credit checks can all change the maths. Worked{" "}
+        <strong>EXAMPLE</strong>s below use Loan A (£8,500 · 24.9% · 48 months · £0 fee) and Loan B
+        (£12,000 · 16.9% · 60 months · £195 fee) to show when a fee erases the apparent benefit.
       </p>
 
       <h2 className="text-xl font-semibold text-slate-900 pt-2">
@@ -138,31 +137,49 @@ export default function Page() {
         When fees erase the benefit — two counter-EXAMPLES
       </h2>
       <p>
-        <strong>Counter-EXAMPLE 1 — modest rate cut, same fee.</strong> Keep EXAMPLE Loan A (£8,500 ·
-        24.9% · 48 months · £0 fee) and refinance to <strong>23.9% EXAMPLE</strong> for 48 months with
-        the same <strong>£195 EXAMPLE</strong> fee. Monthly saving shrinks to about{" "}
-        <strong>£4.72 EXAMPLE</strong>. Interest saving before the fee is only about{" "}
-        <strong>£226 EXAMPLE</strong>; after the fee, lifetime saving falls to roughly{" "}
-        <strong>£31 EXAMPLE</strong>. Fee break-even stretches to about{" "}
-        <strong>42 months EXAMPLE</strong> — almost the whole term. A one-percentage-point cut that
-        looks “better on the rate” barely covers a mid-hundreds fee once interest maths is done.
+        <strong>Counter-EXAMPLE 1 — modest rate cut, same fee.</strong> Keep EXAMPLE Loan A and
+        refinance to <strong>23.9% EXAMPLE</strong> for 48 months with the same{" "}
+        <strong>£195 EXAMPLE</strong> fee. Monthly saving shrinks to about{" "}
+        <strong>£4.72 EXAMPLE</strong>; interest saving before the fee ≈ <strong>£226 EXAMPLE</strong>;
+        after the fee ≈ <strong>£31 EXAMPLE</strong>. Fee break-even stretches to about{" "}
+        <strong>42 months EXAMPLE</strong> — almost the whole term. A one-point cut barely covers a
+        mid-hundreds fee.
       </p>
       <p>
-        <strong>Counter-EXAMPLE 2 — large rate cut, short time left.</strong> Suppose EXAMPLE Loan A
-        has already run for 36 months, leaving about <strong>£2,962 EXAMPLE</strong> and{" "}
-        <strong>12 months</strong> on the original schedule. Refinance that remaining balance to{" "}
-        <strong>14.9% EXAMPLE</strong> for 12 months with a <strong>£195 EXAMPLE</strong> fee. Monthly
-        saving is still positive (~<strong>£14.17 EXAMPLE</strong>), and fee break-even on cashflow
-        alone looks like about <strong>14 months EXAMPLE</strong> — longer than the 12 months left.
-        Lifetime interest saved on the short stub is only about <strong>£170 EXAMPLE</strong>, so after
-        the £195 fee the refinance shows a small <strong>lifetime loss</strong> (~
-        <strong>£25 EXAMPLE</strong>) under these assumptions. The lower rate is real; the fee still
-        wins because there is not enough remaining interest to claw it back.
+        <strong>Counter-EXAMPLE 2 — large rate cut, short time left.</strong> After 36 months on EXAMPLE
+        Loan A, about <strong>£2,962 EXAMPLE</strong> and <strong>12 months</strong> remain. Refinance
+        that stub to <strong>14.9% EXAMPLE</strong> for 12 months with a <strong>£195 EXAMPLE</strong>{" "}
+        fee. Monthly saving ≈ <strong>£14.17 EXAMPLE</strong>; cashflow break-even ≈{" "}
+        <strong>14 months EXAMPLE</strong> — longer than the stub. Lifetime interest saved ≈{" "}
+        <strong>£170 EXAMPLE</strong>, so after the fee the refinance shows a small{" "}
+        <strong>lifetime loss</strong> (~<strong>£25 EXAMPLE</strong>). The lower rate is real; the fee
+        still wins when remaining interest is thin. Always price fees against <em>remaining</em>{" "}
+        interest, not day-one full-term interest.
+      </p>
+
+      <h2 className="text-xl font-semibold text-slate-900 pt-2">
+        EXAMPLE Loan B — fee already on the product
+      </h2>
+      <p>
+        Site <strong>EXAMPLE Loan B</strong>: £12,000 · 16.9% EXAMPLE · 60 months · £195 EXAMPLE
+        arrangement fee. Even without a refinance, that fee can mean less cash in hand than the face
+        principal — so EMI alone understates true cost. See{" "}
+        <Link href="/guides/fees-apr-true-cost" className="text-slate-900 underline">
+          fees, APR and true cost
+        </Link>
+        .
       </p>
       <p>
-        Together these counter-EXAMPLES make the same point as the main comparison: fees can wipe a
-        lower rate when the cut is thin, the leftover term is short, or both. Always price the fee
-        against <em>remaining</em> interest, not against the original full-term interest on day one.
+        As a refinance <em>target</em>: a current EXAMPLE of £12,000 at 22.9% over 60 months (£0 fee)
+        pays about <strong>£337.55 EXAMPLE</strong> / month (interest ≈ <strong>£8,253 EXAMPLE</strong>).
+        Moving to Loan B drops the EMI to about <strong>£297.06 EXAMPLE</strong> (saving ≈{" "}
+        <strong>£40.49 EXAMPLE</strong>); after the £195 fee, full-term maths can still favour the
+        switch. If only ~18 months remain on a smaller balance, the same £195 can erase most of the
+        rate cut — same lesson as Counter-EXAMPLE 2. Add any early-settlement charge from{" "}
+        <Link href="/guides/early-settlement-personal-loans" className="text-slate-900 underline">
+          early settlement on personal loans
+        </Link>{" "}
+        into the fee pot before trusting break-even months.
       </p>
 
       <h2 className="text-xl font-semibold text-slate-900 pt-2">
@@ -186,10 +203,9 @@ export default function Page() {
         APR, total charge for credit, and public guidance
       </h2>
       <p>
-        In the UK, regulated consumer credit uses an <strong>APR</strong> (annual percentage rate of
-        charge) that reflects the total charge for credit under prescribed assumptions. The FCA’s
-        Consumer Credit sourcebook sets out how the total charge for credit and APR are determined for
-        regulated agreements (
+        In the UK, regulated consumer credit uses an <strong>APR</strong> that reflects the total
+        charge for credit under prescribed assumptions. The FCA’s Consumer Credit sourcebook sets out
+        how that charge and APR are determined (
         <a
           href="https://handbook.fca.org.uk/handbook/concapp1"
           className="text-slate-900 underline"
@@ -198,9 +214,7 @@ export default function Page() {
         >
           FCA Handbook, CONC App 1
         </a>
-        ). MoneyHelper’s borrowing guidance similarly stresses comparing the cost of credit options —
-        including key figures such as APR and how much you repay overall — rather than reacting to a
-        headline rate alone (
+        ). MoneyHelper stresses comparing APR and total repayable — not a headline rate alone (
         <a
           href="https://www.moneyhelper.org.uk/en/everyday-money/credit/options-for-borrowing-money"
           className="text-slate-900 underline"
@@ -209,50 +223,42 @@ export default function Page() {
         >
           MoneyHelper — Options for borrowing money
         </a>
-        ). LoanCalc Lab’s refinance and true-cost tools are illustrative companions to those
-        disclosures; they are not a substitute for the lender’s pre-contract information or a
-        regulated APR on an agreement.
+        ). LoanCalc Lab’s tools are illustrative companions to those disclosures, not a substitute for
+        pre-contract information.
       </p>
 
       <h2 className="text-xl font-semibold text-slate-900 pt-2">Practical checklist</h2>
       <ul className="list-disc space-y-2 pl-5">
         <li>
-          Confirm you are comparing personal-loan refinance with personal-loan refinance — not a
-          mortgage or secured remortgage product
+          Compare personal-loan refinance with personal-loan refinance only — not a mortgage or
+          secured remortgage product
         </li>
         <li>
-          Put arrangement fees and any early-repayment / exit charge into the same “fees” total
+          Put arrangement fees and any early-repayment / exit charge into one “fees” total
         </li>
         <li>
-          Compare remaining interest on the current loan with interest + fees on the new one at the
-          proposed term
+          Compare remaining interest on the current loan with interest + fees on the new schedule;
+          check fee break-even months fit inside the term
         </li>
         <li>
-          Note fee break-even months and whether that horizon fits inside the new (or remaining) term
-        </li>
-        <li>
-          Watch for term stretch that lowers the EMI while raising lifetime interest
-        </li>
-        <li>
-          Remember credit checks and eligibility — calculators do not approve credit or guarantee a
-          rate
+          Watch for term stretch that lowers the EMI while raising lifetime interest; calculators do
+          not approve credit or guarantee a rate
         </li>
       </ul>
 
       <h2 className="text-xl font-semibold text-slate-900 pt-2">Try the calculators</h2>
       <p>
-        For the EXAMPLE Loan A baseline (£8,500 · 24.9% EXAMPLE rate · 48 months · £0 fee) and a
-        lower-rate fee-bearing alternative, start with the{" "}
+        For EXAMPLE Loan A or Loan B inputs, start with the{" "}
         <Link href="/calculators/refinance-break-even" className="text-slate-900 underline">
           refinance break-even calculator
         </Link>
-        . Change the new rate, fee and term one at a time to see when monthly saving, break-even
-        months and lifetime saving flip sign. Use the{" "}
+        . Change rate, fee and term one at a time to see when monthly saving, break-even months and
+        lifetime saving flip sign. Use the{" "}
         <Link href="/calculators/apr-true-cost" className="text-slate-900 underline">
           APR / true cost calculator
         </Link>{" "}
-        when you want a fee-adjusted view of a single offer’s effective cost. The point of these tools
-        is clearer cost maths under stated assumptions — not a sales pitch to refinance.
+        for a fee-adjusted view of a single offer. Clearer cost maths under stated assumptions — not a
+        sales pitch to refinance.
       </p>
 
       <h2 className="text-xl font-semibold text-slate-900 pt-2">Disclaimer</h2>
