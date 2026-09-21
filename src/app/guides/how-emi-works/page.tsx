@@ -25,6 +25,8 @@ export default function Page() {
       related={[
         { href: "/calculators/personal-loan-emi", label: "Personal loan / EMI calculator" },
         { href: "/calculators/amortisation", label: "Amortisation schedule" },
+        { href: "/guides/amortisation-explained", label: "Amortisation explained" },
+        { href: "/guides/fees-apr-true-cost", label: "Fees, APR and true cost" },
         {
           href: "/guides/using-calculators-with-a-lender-illustration",
           label: "Using calculators with a lender illustration",
@@ -216,6 +218,23 @@ export default function Page() {
           the simple EMI model does not capture every clause
         </li>
       </ul>
+
+      <h2 className="text-xl font-semibold text-slate-900 pt-2">
+        Related guides on the schedule and fees
+      </h2>
+      <p>
+        Once you understand the EMI formula, the next step is reading the month-by-month payoff
+        map. Our{" "}
+        <Link href="/guides/amortisation-explained" className="text-slate-900 underline">
+          amortisation explained
+        </Link>{" "}
+        guide walks through how each payment splits interest and principal over the term. If an
+        arrangement fee appears on an offer, pair that with{" "}
+        <Link href="/guides/fees-apr-true-cost" className="text-slate-900 underline">
+          fees, APR and true cost
+        </Link>{" "}
+        so you compare cash received against total repayable — not just the monthly EMI figure.
+      </p>
 
       <h2 className="text-xl font-semibold text-slate-900 pt-2">Try the calculators</h2>
       <p>
