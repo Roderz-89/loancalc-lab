@@ -30,6 +30,7 @@ export default function Page() {
           href: "/guides/amortisation-explained",
           label: "Amortisation explained — how to read a loan schedule",
         },
+        { href: "/guides/how-emi-works", label: "How EMI works" },
         { href: "/calculators/personal-loan-emi", label: "Personal loan / EMI calculator" },
         { href: "/glossary/amortisation", label: "Amortisation glossary" },
       ]}
@@ -49,6 +50,10 @@ export default function Page() {
         For the wider story of why interest dominates early and principal later, see{" "}
         <Link href="/guides/amortisation-explained" className="text-slate-900 underline">
           Amortisation explained
+        </Link>
+        ; for the EMI formula behind the Payment column, see{" "}
+        <Link href="/guides/how-emi-works" className="text-slate-900 underline">
+          How EMI works
         </Link>
         . Here we stay on the columns themselves, using one labelled UK{" "}
         <strong>EXAMPLE</strong>: Loan A (£8,500 · 24.9% EXAMPLE · 48 months · £0 fee). All figures
