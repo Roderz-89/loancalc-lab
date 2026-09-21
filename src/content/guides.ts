@@ -33,6 +33,17 @@ export const GUIDES: GuideMeta[] = [
     relatedCalcs: ["/calculators/amortisation", "/calculators/personal-loan-emi"],
   },
   {
+    slug: "how-to-read-an-amortisation-schedule",
+    title: "How to read an amortisation schedule — column by column",
+    description:
+      "UK companion to the amortisation schedule tool: what Month, Payment, Interest, Principal and Balance mean, with a worked EXAMPLE for Loan A (£8,500 · 24.9% EXAMPLE · 48 months · £0 fee).",
+    href: "/guides/how-to-read-an-amortisation-schedule",
+    published: "2026-09-21",
+    updated: "2026-09-21",
+    priority: "P0",
+    relatedCalcs: ["/calculators/amortisation", "/calculators/personal-loan-emi"],
+  },
+  {
     slug: "snowball-vs-avalanche",
     title: "Snowball vs avalanche — behaviour vs maths for multiple debts",
     description:

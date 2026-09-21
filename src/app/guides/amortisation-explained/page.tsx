@@ -24,6 +24,10 @@ export default function Page() {
       updated="2026-09-21"
       related={[
         { href: "/calculators/amortisation", label: "Amortisation schedule" },
+        {
+          href: "/guides/how-to-read-an-amortisation-schedule",
+          label: "How to read an amortisation schedule",
+        },
         { href: "/calculators/personal-loan-emi", label: "Personal loan / EMI calculator" },
         { href: "/glossary/amortisation", label: "Amortisation glossary" },
       ]}

@@ -54,6 +54,10 @@ export function AmortisationCalculator() {
         { href: "/calculators/personal-loan-emi", label: "Personal loan / EMI" },
         { href: "/calculators/extra-payment", label: "Extra payment calculator" },
         { href: "/guides/amortisation-explained", label: "Amortisation explained" },
+        {
+          href: "/guides/how-to-read-an-amortisation-schedule",
+          label: "How to read an amortisation schedule",
+        },
       ]}
       faqs={[
         {
