@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CALCULATORS } from "@/content/calculators";
 import { FEATURED_GUIDE_SLUGS, GUIDES } from "@/content/guides";
 import { SITE, TRUST_STRIP, formatContentDate } from "@/content/site";
+import { EXAMPLE_LOAN_A, EXAMPLE_LOAN_A_NOTE } from "@/content/example-loan";
 import { AdSlot } from "@/components/calculator/AdSlot";
 
 export const metadata: Metadata = {
@@ -32,13 +33,12 @@ export default function HomePage() {
             Personal loan &amp; debt payoff tools
           </p>
           <h1 className="mt-3 max-w-3xl text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
-            What will you pay each month — and how can you clear debt faster?
+            UK personal loan payments and debt payoff — clearer maths
           </h1>
           <p className="mt-5 max-w-2xl text-lg text-slate-600">
-            Work out your EMI or instalment in £, see whether consolidating saves money, and
-            compare snowball vs avalanche payoff — with fees and assumptions shown. UK-first by
-            default; country modes are available as calculator toggles when you need another
-            currency or payment label.
+            Work out your monthly payment in £, see whether consolidating saves money, and compare
+            snowball vs avalanche payoff — with fees and assumptions shown. Illustrative tools for
+            UK borrowers; not a lender and not credit advice.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
@@ -61,6 +61,32 @@ export default function HomePage() {
               Snowball vs avalanche →
             </Link>
           </div>
+
+          <Link
+            href="/calculators/personal-loan-emi"
+            className="mt-8 block max-w-2xl rounded-xl border border-amber-200 bg-amber-50/80 p-5 shadow-sm transition hover:border-amber-300 hover:bg-amber-50"
+            aria-labelledby="example-loan-a-heading"
+          >
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="rounded bg-amber-200/80 px-2 py-0.5 text-xs font-bold uppercase tracking-wide text-amber-950">
+                EXAMPLE
+              </span>
+              <span className="text-xs font-medium uppercase tracking-wider text-amber-900/80">
+                Loan A — try the EMI calculator
+              </span>
+            </div>
+            <h2
+              id="example-loan-a-heading"
+              className="mt-2 text-lg font-semibold text-slate-900"
+            >
+              £{EXAMPLE_LOAN_A.loanAmount.toLocaleString("en-GB")} · {EXAMPLE_LOAN_A.annualRate}% ·{" "}
+              {EXAMPLE_LOAN_A.termMonths} months · £{EXAMPLE_LOAN_A.upfrontFee} fee
+            </h2>
+            <p className="mt-2 text-sm text-slate-600">{EXAMPLE_LOAN_A_NOTE}</p>
+            <p className="mt-3 text-sm font-medium" style={{ color: SITE.accent }}>
+              Open personal loan / EMI calculator →
+            </p>
+          </Link>
 
           <div className="mt-8 max-w-2xl rounded-xl border border-stone-200 bg-white/90 p-4 shadow-sm">
             <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-semibold text-slate-800">

@@ -3,7 +3,7 @@ export const SITE = {
   domain: "loancalclab.net",
   tagline: "See your payment, compare consolidation, pay debt faster",
   description:
-    "Free UK-first personal loan and debt calculators — EMI and monthly payments in £, consolidation break-even, snowball vs avalanche, fees and true cost. Country modes available as toggles. Clear maths, stated assumptions.",
+    "Free UK personal loan and debt payoff calculators — monthly payments in £, consolidation break-even, snowball vs avalanche, fees and true cost. Clear maths, stated assumptions.",
   locale: "en-GB",
   accent: "#c8102e",
   /** Secondary accent for light visual differentiation from Remortgage Lab */
@@ -62,7 +62,7 @@ export const TRUST_STRIP = {
   signals: ["Free", "No signup", "Not a lender", "Maths disclosed"] as const,
   heroSignals: ["Not a lender", "Not credit advice", "Illustrative only"] as const,
   jurisdictionNote:
-    "UK £ by default — switch country mode on a calculator when you need another currency. Always check local lender terms.",
+    "UK £ by default. Always check lender terms before you borrow.",
   disclaimerHref: "/calculator-disclaimer",
   disclaimerLabel: "Calculator disclaimer",
 } as const;
