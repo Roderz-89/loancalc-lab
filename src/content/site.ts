@@ -13,7 +13,7 @@ export const SITE = {
   /** Anonymous editorial byline — no personal name on site-facing content */
   editorial: "LoanCalc Lab editorial",
   /** Shared editorial “last checked” date */
-  contentAsOf: "2026-09-21",
+  contentAsOf: "2026-09-22",
   /** Show labelled mock AdSense placements for local UX review (not live ads) */
   adsensePreview: false,
   /** Real AdSense; script loads unconditionally (Google CMP handles consent) */
