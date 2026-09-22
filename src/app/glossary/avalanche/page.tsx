@@ -13,29 +13,16 @@ export default function Page() {
     <ArticleLayout
       title='Debt avalanche'
       description='Payoff method that clears the highest interest rate first.'
-      crumbs={[
-        { label: "Home", href: "/" },
-        { label: "Glossary", href: "/glossary" },
-        { label: 'Debt avalanche' },
-      ]}
+      crumbs={[{ label: "Home", href: "/" }, { label: "Glossary", href: "/glossary" }, { label: 'Debt avalanche' }]}
       published="2026-09-14"
       updated="2026-09-14"
-      related={[
-          { href: "/calculators/snowball-vs-avalanche", label: "Snowball vs avalanche" },
-          { href: "/guides/snowball-vs-avalanche", label: "Strategy guide" },
-          {
-            href: "/guides/snowball-vs-avalanche-with-fees",
-            label: "Snowball vs avalanche with fees",
-          },
-      ]}
+      showAd={false}
+      related={[{ href: "/calculators/snowball-vs-avalanche", label: "Snowball vs avalanche" }, { href: "/guides/snowball-vs-avalanche", label: "Strategy guide" }]}
     >
-
       <p>
         Avalanche targets the highest rate first while maintaining minimums elsewhere. It usually
-        minimises total interest compared with snowball, though balances may take longer to “feel”
-        cleared.
+        minimises total interest compared with snowball.
       </p>
-
     </ArticleLayout>
   );
 }
