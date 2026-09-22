@@ -11,9 +11,15 @@ declare global {
 
 const SCRIPT_ATTR = "data-lcl-adsense";
 
+function adsenseScriptAlreadyPresent(): boolean {
+  if (document.querySelector(`script[${SCRIPT_ATTR}]`)) return true;
+  const src = `pagead/js/adsbygoogle.js?client=${SITE.adsenseClient}`;
+  return Array.from(document.scripts).some((s) => s.src.includes(src));
+}
+
 function injectAdSenseScript(): void {
   if (!SITE.adsenseEnabled || SITE.adsensePreview) return;
-  if (document.querySelector(`script[${SCRIPT_ATTR}]`)) return;
+  if (adsenseScriptAlreadyPresent()) return;
 
   const script = document.createElement("script");
   script.async = true;
@@ -23,11 +29,7 @@ function injectAdSenseScript(): void {
   document.head.appendChild(script);
 }
 
-/**
- * Loads adsbygoogle.js unconditionally when AdSense is enabled.
- * Google’s Privacy & messaging (CMP) handles GDPR consent — no local gate.
- * Mount once from the root layout.
- */
+/** Fallback loader if the static head snippet is missing. Does not double-inject. */
 export function AdSenseLoader() {
   useEffect(() => {
     if (!SITE.adsenseEnabled || SITE.adsensePreview) return;

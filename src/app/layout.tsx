@@ -46,6 +46,9 @@ export const metadata: Metadata = {
   verification: {
     google: "_7cP5lmvOsmQN2UP7mdUh_YLN1vu3-CTGRgpeG2uEvQ",
   },
+  other: {
+    "google-adsense-account": SITE.adsenseClient,
+  },
 };
 
 export default function RootLayout({
@@ -72,8 +75,19 @@ export default function RootLayout({
     },
   };
 
+  const adsOn = SITE.adsenseEnabled && !SITE.adsensePreview;
+
   return (
     <html lang="en-GB">
+      <head>
+        {adsOn ? (
+          <script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${SITE.adsenseClient}`}
+            crossOrigin="anonymous"
+          />
+        ) : null}
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col antialiased`}>
         <script
           type="application/ld+json"
