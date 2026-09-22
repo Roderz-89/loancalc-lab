@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { SnowballAvalancheCalculator } from "@/components/calculator/SnowballAvalancheCalculator";
 import { SITE } from "@/content/site";
+import { SNOWBALL_EXPLAINER } from "@/content/calculator-explainers";
 
 export const metadata: Metadata = {
   title: 'Snowball vs avalanche payoff planner',
@@ -41,6 +42,9 @@ export default function Page() {
         />
       </div>
       <SnowballAvalancheCalculator />
+      <section className="mx-auto max-w-4xl space-y-4 px-4 pb-10 text-slate-700 leading-relaxed sm:px-6">
+        {SNOWBALL_EXPLAINER}
+      </section>
     </>
   );
 }
