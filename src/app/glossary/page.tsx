@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <ArticleLayout
+      showAd={false}
       title="Glossary"
       description="Core borrowing terms used across LoanCalc Lab."
       crumbs={[
