@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { PersonalLoanEmiCalculator } from "@/components/calculator/PersonalLoanEmiCalculator";
 import { SITE } from "@/content/site";
+import { EMI_EXPLAINER } from "@/content/calculator-explainers";
 
 export const metadata: Metadata = {
   title: 'Personal loan / EMI payment calculator',
@@ -41,6 +42,9 @@ export default function Page() {
         />
       </div>
       <PersonalLoanEmiCalculator />
+      <section className="mx-auto max-w-4xl space-y-4 px-4 pb-10 text-slate-700 leading-relaxed sm:px-6">
+        {EMI_EXPLAINER}
+      </section>
     </>
   );
 }
