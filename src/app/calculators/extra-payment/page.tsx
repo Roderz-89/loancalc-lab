@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { ExtraPaymentCalculator } from "@/components/calculator/ExtraPaymentCalculator";
 import { SITE } from "@/content/site";
+import { EXTRA_PAYMENT_EXPLAINER } from "@/content/calculator-explainers";
 
 export const metadata: Metadata = {
   title: 'Extra payment / early payoff calculator',
@@ -27,20 +28,12 @@ export default function Page() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="mx-auto max-w-4xl px-4 pt-6 sm:px-6">
-        <Breadcrumbs
-          items={[
-            { label: "Home", href: "/" },
-            { label: "Calculators", href: "/calculators" },
-            { label: 'Extra payment / early payoff calculator' },
-          ]}
-        />
+        <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Calculators", href: "/calculators" }, { label: 'Extra payment / early payoff calculator' }]} />
       </div>
       <ExtraPaymentCalculator />
+      <section className="mx-auto max-w-4xl space-y-4 px-4 pb-10 text-slate-700 leading-relaxed sm:px-6">{EXTRA_PAYMENT_EXPLAINER}</section>
     </>
   );
 }

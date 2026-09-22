@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { AprTrueCostCalculator } from "@/components/calculator/AprTrueCostCalculator";
 import { SITE } from "@/content/site";
+import { APR_EXPLAINER } from "@/content/calculator-explainers";
 
 export const metadata: Metadata = {
   title: 'APR / true cost of fees',
@@ -27,20 +28,12 @@ export default function Page() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="mx-auto max-w-4xl px-4 pt-6 sm:px-6">
-        <Breadcrumbs
-          items={[
-            { label: "Home", href: "/" },
-            { label: "Calculators", href: "/calculators" },
-            { label: 'APR / true cost of fees' },
-          ]}
-        />
+        <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Calculators", href: "/calculators" }, { label: 'APR / true cost of fees' }]} />
       </div>
       <AprTrueCostCalculator />
+      <section className="mx-auto max-w-4xl space-y-4 px-4 pb-10 text-slate-700 leading-relaxed sm:px-6">{APR_EXPLAINER}</section>
     </>
   );
 }
